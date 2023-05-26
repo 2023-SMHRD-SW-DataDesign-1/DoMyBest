@@ -24,6 +24,11 @@ public class GitTest {
 		System.out.println("yes..");
 		System.out.println("한솔아 돈 얼마있어?");
 		System.out.println("백원만");
+		
+		System.out.println("무표정으로 표정관리하는 SU피티");
+		System.out.println("찐즐거울때는 고개들고 웃는 동욱");
+		System.out.println("웃는 얼굴이 사랑스러운 상지");
+		System.out.println("인생최초로 막내이쁨받고있는 한솔");
 
 
 
