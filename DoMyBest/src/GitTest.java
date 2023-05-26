@@ -25,8 +25,11 @@ public class GitTest {
 		System.out.println("한솔아 돈 얼마있어?");
 		System.out.println("백원만");
 
+
+
 		
-	
+		
+		
 		
 	}
 }
