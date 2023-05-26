@@ -16,15 +16,11 @@ public class GitTest {
 		System.out.println("에스파 스파이시 노래 아는 사람 없지?깔깔");
 		System.out.println("다들 최애곡이 뭐야?");
 		System.out.println("나는 이지훈의 인형");
-		
-		System.out.println("간식부자동욱");
-		System.out.println("겉만차가운수환");
-		System.out.println("솔직깜찍한솔");
-		System.out.println("나빼고점심맛있을거같아?");
-		System.out.println("yes..");
 
 		
-	
+		
+		
+		
 		
 	}
 }
