@@ -30,6 +30,9 @@ public class GitTest {
 		System.out.println("웃는 얼굴이 사랑스러운 상지");
 		System.out.println("인생최초로 막내이쁨받고있는 한솔");
 
+		System.out.println("추가");
+
+
 
 
 		
