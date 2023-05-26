@@ -22,6 +22,8 @@ public class GitTest {
 		System.out.println("솔직깜찍한솔");
 		System.out.println("나빼고점심맛있을거같아?");
 		System.out.println("yes..");
+		System.out.println("한솔아 돈 얼마있어?");
+		System.out.println("백원만");
 
 		
 	
