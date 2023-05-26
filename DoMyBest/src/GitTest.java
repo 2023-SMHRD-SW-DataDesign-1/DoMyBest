@@ -10,6 +10,7 @@ public class GitTest {
 		System.out.println("오류떠라~");
 		System.out.println("울보한솔");
 		System.out.println("매정수환");
+		System.out.println("공감상지");
 
 	}
 }
