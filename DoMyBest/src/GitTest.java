@@ -12,5 +12,7 @@ public class GitTest {
 		System.out.println("매정수환");
 		System.out.println("보라짱친상지");
 
+		
+		
 	}
 }
