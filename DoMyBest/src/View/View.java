@@ -49,6 +49,7 @@ public class View {
 		while (true) {
 			System.out.println("===============JAVA HAMBURER GAME 회원 시스템================");
 			System.out.print("[1] 회원 가입 [2] 로그인 [3] 랭킹조회 [4] 회원 삭제 [5] 게임 종료  >>");
+			System.out.println();
 			int num = scan.nextInt();
 			// 회원가입
 			if (num == 1) {
@@ -66,10 +67,10 @@ public class View {
 
 				// 로그인
 			} else if (num == 2) {
-				System.out.println("======= 로그인 =======");
-				System.out.print("ID를 입력 >> ");
+				System.out.println("══════════════════ ೋღ 로그인🌺 ღೋ ══════════════════════");
+				System.out.print("원하는 ID를 입력해주세요 >> ");
 				String id = scan.next();
-				System.out.print("PW를 입력 >>");
+				System.out.print("원하는 PW를 입력해주세요 >>");
 				String pw = scan.next();
 
 				MemberDAO loginCon = new MemberDAO();
@@ -87,17 +88,32 @@ public class View {
 				}
 
 			} else if (num == 3) {
-				System.out.println("게임 내 랭킹을 조회합니다.");
+				System.out.println("╭➳➳➳➳➳♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡┈┈┈┈┈┈╮");
+				System.out.println("      이 구역의 랭킹탐정이 랭킹을 조회합니다.");
+				System.out.println("    랭킹탐정의 선글라스가 반짝이며 랭킹을 조회합니다.");
+				System.out.println("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄");
+				System.out.println("█░░░░░░░░▀█▄▀▄▀██████░▀█▄▀▄▀██████░");
+				System.out.println("░░░░░░░░░░░▀█▄█▄███▀░░░ ▀██▄█▄███▀░");
+
 				MemberDAO rankingCon = new MemberDAO();
 				for (int i = 0; i < rankingCon.rankingMember().size(); i++) {
-					System.out.print("Id = " + rankingCon.rankingMember().get(i).getId() + " ");
-					System.out.print("Name = " + rankingCon.rankingMember().get(i).getName() + " ");
-					System.out.print("Score = " + rankingCon.rankingMember().get(i).getScore() + " ");
+					System.out.print((i+1)+"등 아이디는 ➳" + rankingCon.rankingMember().get(i).getId() + " ");
+					System.out.print("이름은 ➳ " + rankingCon.rankingMember().get(i).getName() + " ");
+					System.out.print("점수는 ➳" + rankingCon.rankingMember().get(i).getScore() + " ");
 					System.out.println();
 				}
-//				ArrayList<MemberDTO> result = lankingCon.lankingMember();
 
 			} else if (num == 4) {
+				System.out.println("══════════════════ ೋღ 회원정보 삭제🌺 ღೋ ══════════════════════");
+				System.out.print("삭제하고 싶은 아이디 입력 : ");
+	            String id = scan.next();
+//	            
+	            MemberDAO deleteCon = new MemberDAO();
+                String result = deleteCon.memberDelete(new MemberDTO(id));
+               
+//	            
+//	            System.out.println("회원 삭제에 "+result+"하셨습니다.");
+			} else if (num == 5) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
 

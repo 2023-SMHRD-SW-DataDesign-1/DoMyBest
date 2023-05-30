@@ -30,6 +30,9 @@ public class MemberDTO {
 		this.id = id;
 		this.pw = pw;
 	}
+	public MemberDTO(String id) {
+		this.id = id;
+	}
 
 	// getter, setter
 	public String getId() {
