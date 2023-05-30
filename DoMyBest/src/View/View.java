@@ -109,7 +109,7 @@ public class View {
 				String id = scan.next();
 //	            
 				MemberDAO deleteCon = new MemberDAO();
-				String result = deleteCon.memberDelete(new MemberDTO(id));
+				deleteCon.memberDelete(id);
 
 //	            
 //	            System.out.println("회원 삭제에 "+result+"하셨습니다.");
