@@ -31,6 +31,8 @@ public class GitTest {
 		System.out.println("인생최초로 막내이쁨받고있는 한솔");
 
 		System.out.println("추가");
+		
+		System.out.println("잘 쉬고 왔지만...미니프로젝트 뭘할지 아이디어가 없다...미안행");
 
 
 
