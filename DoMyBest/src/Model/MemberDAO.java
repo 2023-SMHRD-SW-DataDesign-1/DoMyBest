@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import Model.MemberDTO;
+
 public class MemberDAO {
 	Connection conn = null;
 	PreparedStatement psmt;
@@ -56,6 +58,32 @@ public class MemberDAO {
 			allClose();
 		}
 
+	}
+	
+	public String loginMember(MemberDTO dto) {
+
+		getConn();
+		String name = null;
+		try {
+			String sql = "select name from member where id = ? and pw = ?";
+
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, dto.getId());
+			psmt.setString(2, dto.getPw());
+
+			rs = psmt.executeQuery();
+
+			if (rs.next()) {
+				name = rs.getString("name");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			allClose();
+		}
+		return name;
 	}
 
 	private void allClose() {
