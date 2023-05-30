@@ -32,16 +32,16 @@ public class MemberDAO {
 		}
 	}
 	
-	public int insertMember(String id, String pw, String name) {
+	public int insertMember(MemberDTO dto) {
 		getConn();
 		String sql = "insert into MEMBER values(?,?,?)";
 		int cnt = 0;
 
 		try {
 			pst = conn.prepareStatement(sql);
-			pst.setString(1, name);
-			pst.setString(2, pw);
-			pst.setString(3, name);
+			pst.setString(1, dto.getId());
+			pst.setString(2, dto.getPw());
+			pst.setString(3, dto.getName());
 
 			cnt = pst.executeUpdate();
 
