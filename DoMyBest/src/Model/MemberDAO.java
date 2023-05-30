@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import Model.MemberDTO;
 
 public class MemberDAO {
-	
-	//전역변수 지정
+
+	// 전역변수 지정
 	Connection conn = null;
 	PreparedStatement psmt;
 	ResultSet rs = null;
 
-	//기능 메소드 생성 
-	public void getConn() { //연결
+	// 기능 메소드 생성
+	public void getConn() { // 연결
 		try {
 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -36,7 +36,7 @@ public class MemberDAO {
 		}
 	}
 
-	public void insertMember(MemberDTO dto) { //회원가입
+	public void insertMember(MemberDTO dto) { // 회원가입
 		getConn();
 		String sql = "insert into MEMBER(id, pw, name) values(?,?,?)";
 		int row = 0;
@@ -62,11 +62,11 @@ public class MemberDAO {
 		}
 
 	}
-	
-	public String loginMember(MemberDTO dto) { //로그인
+
+	public String loginMember(MemberDTO dto) { // 로그인
 		getConn();
 		String name = null;
-		
+
 		try {
 			String sql = "select name from member where id = ? and pw = ?";
 
@@ -89,50 +89,55 @@ public class MemberDAO {
 		return name;
 	}
 
-	public void lankingMember(getID(), getname()) { //랭킹조회
+	public ArrayList<MemberDTO> LankingMember() { // 랭킹조회
 		getConn();
-		
+		MemberDTO dto;
+		ArrayList<MemberDTO> Mlist = new ArrayList<>();
+
 		try {
-			String sql = "select id, name, score from member";
+			String sql = "select id, name, score from member order by score desc";
 			psmt = conn.prepareStatement(sql);
-			int row = psmt.executeQuery();
-			
-			psmt.setString(1, dto.getID());
-			psmt.setString(2, dto.getName());
-			psmt.setString(3, dto.getScore());
-			
-			
-		} catch(Exception e) {
-	     	e.printStackTrace();
-	    } finally {
-		    allClose();
-	    }
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				String id = rs.getString(1);
+				String name = rs.getString(2);
+				int score = rs.getInt(3);
+
+//				System.out.println(" name : " + name + " phone_num : " + phone_num + " age : " + age);
+				dto = new MemberDTO(id, name, score);
+				Mlist.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			allClose();
+		}
+		return Mlist;
 	}
-		
-		
-	public void memberDelete(MemberDTO dto) { //회원정보 삭제
+
+	public void memberDelete(MemberDTO dto) { // 회원정보 삭제
 		getConn();
-		
-		
+
 		try {
 			String sql = "delete from MEMBER where id = ?";
 			psmt = conn.prepareStatement(sql);
-			
+
 			int cnt = psmt.executeUpdate();
-			if (cnt > 0) System.out.println("삭제 완료");
-			else System.out.println("삭제 실패");	
+			if (cnt > 0)
+				System.out.println("삭제 완료");
+			else
+				System.out.println("삭제 실패");
 		}
-		
-		catch(Exception e) {
-	     	e.printStackTrace();
-	    } finally {
-		    allClose();
-	    }
+
+		catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			allClose();
+		}
 	}
-		
-	
-	
- 	private void allClose() { //종료
+
+	private void allClose() { // 종료
 		try {
 			if (psmt != null)
 				psmt.close();
