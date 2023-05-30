@@ -23,7 +23,6 @@ public class MemberDTO {
 	public MemberDTO(String id, String pw) {
 		this.id = id;
 		this.pw = pw;
-		this.name = name;
 
 	}
 
