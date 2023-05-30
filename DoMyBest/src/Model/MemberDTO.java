@@ -6,27 +6,30 @@ public class MemberDTO {
 	private String name;
 	private int score;
 
-	public MemberDTO(String id, String pw, String name, int score) {
+	
+	
+	//MemberDTO: sql정보 갖고오기
+	public MemberDTO(String id, String pw, String name, int score) { 
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
 		this.score = score;
 	}
 
-	public MemberDTO(String id, String pw, String name) {
+	public MemberDTO(String id, String pw, String name) { 
 		this.id = id;
 		this.pw = pw;
 		this.name = name;
-
 	}
 	
 	public MemberDTO(String id, String pw) {
 		this.id = id;
 		this.pw = pw;
-
 	}
 
 
+	
+	//getter, setter
 	public String getId() {
 		return id;
 	}
