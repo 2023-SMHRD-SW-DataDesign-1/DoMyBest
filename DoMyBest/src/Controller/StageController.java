@@ -88,7 +88,7 @@ public class StageController {
 		String answer = null;
 		while (System.currentTimeMillis() < endTime) {
 
-			int temp = ran.nextInt(24);    // 손님(24)명중에 랜덤뽑기
+			int temp = ran.nextInt(24);    // 손님(24)명중에 랜덤뽑기     customList.size로 변경해도 될듯?
 			char question[] = customList.get(temp).getRecipe().toCharArray();   // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
 			System.out.println(customList.get(temp).getHamburger() + "주세요");
 			System.out.print("레시피 : ");
