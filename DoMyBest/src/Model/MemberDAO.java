@@ -112,12 +112,13 @@ public class MemberDAO {
 		return Mlist;
 	}
 
-	public void memberDelete(MemberDTO dto) { // 회원정보 삭제
+	public void memberDelete(String id) { // 회원정보 삭제
 		getConn();
 
 		try {
 			String sql = "delete from MEMBER where id = ?";
 			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, id);
 
 			int cnt = psmt.executeUpdate();
 			if (cnt > 0)
