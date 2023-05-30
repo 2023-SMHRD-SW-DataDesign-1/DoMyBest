@@ -89,9 +89,9 @@ public class MemberDAO {
 		return name;
 	}
 
-	public ArrayList<MemberDTO> LankingMember() { // 랭킹조회
+	public ArrayList<MemberDTO> LankingMember(MemberDTO dto) { // 랭킹조회
 		getConn();
-		MemberDTO dto;
+		//MemberDTO dto;
 		ArrayList<MemberDTO> Mlist = new ArrayList<>();
 
 		try {
@@ -111,7 +111,7 @@ public class MemberDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			allClose();
+			allClosMe();
 		}
 		return Mlist;
 	}

@@ -1,5 +1,6 @@
 package View;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 import Controller.StageController;
@@ -48,7 +49,7 @@ public class View {
 		System.out.println("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");
 		while (true) {
 			System.out.println("===============JAVA HAMBURER GAME 회원 시스템================");
-			System.out.print("[1] 회원 가입 [2] 로그인 [3] 랭킹조회 [4] 종료하기 >>");
+			System.out.print("[1] 회원 가입 [2] 로그인 [3] 랭킹조회 [4] 회원 삭제 [5] 게임 종료  >>");
 			int num = scan.nextInt();
 			// 회원가입
 			if (num == 1) {
@@ -64,12 +65,46 @@ public class View {
 
 				insertCon.insertMember(new MemberDTO(id, pw, name));
 
-				// 정지
+				// 로그인
 			} else if (num == 2) {
+				System.out.println("======= 로그인 =======");
+				System.out.print("ID를 입력 >> ");
+				String id = scan.next();
+				System.out.print("PW를 입력 >>");
+				String pw = scan.next();
+
+				MemberDAO loginCon = new MemberDAO();
+				String name = loginCon.loginMember(new MemberDTO(id, pw));
+
+				if (name != null) {
+					System.out.println(name + "님이 로그인하셨습니다.");
+					System.out.print("♪~ ♬ ♪♬~♪ ♪~ ♬ ♪♬~♪ ♪~ ♬ ♪♬~~ ♬ ♪~ ♬ ♪♬~♪ ♪~ ");
+					
+					//게임 들어가서 어떻게 게임 진행될건지는 여기서부터~!
+					//생각해보기~!
+
+				} else {
+					System.out.println("아이디와 비밀번호를 잘못입력하셨습니다.");
+				}
 
 			} else if (num == 3) {
+				System.out.println("게임 내 랭킹을 조회합니다.");
+				MemberDAO lankingCon = new MemberDAO();
+				for(int i = 0; i < lankingCon.LankingMember(new MemberDTO(null, null, i)).size() ; i++) {
+					
+				}
+				ArrayList<MemberDTO> result = lankingCon.lankingMember();
+				
+				
+			
+				
+				
+				
+
+			} else if (num == 4) {
 				System.out.println("프로그램을 종료합니다.");
 				break;
+
 			} else {
 				System.out.println("숫자를 잘못 입력하셨습니다.");
 			}
