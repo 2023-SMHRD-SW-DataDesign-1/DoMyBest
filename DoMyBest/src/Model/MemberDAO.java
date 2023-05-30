@@ -26,10 +26,11 @@ public class MemberDAO {
 			String dbpw = "smhrd1";
 
 			conn = DriverManager.getConnection(dburl, dbuser, dbpw);
-			if (conn != null)
-				System.out.println("connect success");
-			else
-				System.out.println("connect fail");
+			if (conn != null) {
+//				System.out.println("connect success");
+			} else {
+//				System.out.println("connect fail");
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -89,9 +90,9 @@ public class MemberDAO {
 		return name;
 	}
 
-	public ArrayList<MemberDTO> LankingMember(MemberDTO dto) { // 랭킹조회
+	public ArrayList<MemberDTO> rankingMember() { // 랭킹조회
 		getConn();
-		//MemberDTO dto;
+		// MemberDTO dto;
 		ArrayList<MemberDTO> Mlist = new ArrayList<>();
 
 		try {
@@ -103,15 +104,12 @@ public class MemberDAO {
 				String id = rs.getString(1);
 				String name = rs.getString(2);
 				int score = rs.getInt(3);
-
-//				System.out.println(" name : " + name + " phone_num : " + phone_num + " age : " + age);
-				dto = new MemberDTO(id, name, score);
-				Mlist.add(dto);
+				Mlist.add(new MemberDTO(id, name, score));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			allClosMe();
+			allClose();
 		}
 		return Mlist;
 	}

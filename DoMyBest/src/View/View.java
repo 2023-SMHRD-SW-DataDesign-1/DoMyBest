@@ -79,9 +79,9 @@ public class View {
 				if (name != null) {
 					System.out.println(name + "님이 로그인하셨습니다.");
 					System.out.print("♪~ ♬ ♪♬~♪ ♪~ ♬ ♪♬~♪ ♪~ ♬ ♪♬~~ ♬ ♪~ ♬ ♪♬~♪ ♪~ ");
-					
-					//게임 들어가서 어떻게 게임 진행될건지는 여기서부터~!
-					//생각해보기~!
+
+					// 게임 들어가서 어떻게 게임 진행될건지는 여기서부터~!
+					// 생각해보기~!
 
 				} else {
 					System.out.println("아이디와 비밀번호를 잘못입력하셨습니다.");
@@ -89,17 +89,14 @@ public class View {
 
 			} else if (num == 3) {
 				System.out.println("게임 내 랭킹을 조회합니다.");
-				MemberDAO lankingCon = new MemberDAO();
-				for(int i = 0; i < lankingCon.LankingMember(new MemberDTO(null, null, i)).size() ; i++) {
-					
+				MemberDAO rankingCon = new MemberDAO();
+				for (int i = 0; i < rankingCon.rankingMember().size(); i++) {
+					System.out.print("Id = " + rankingCon.rankingMember().get(i).getId() + " ");
+					System.out.print("Name = " + rankingCon.rankingMember().get(i).getName() + " ");
+					System.out.print("Score = " + rankingCon.rankingMember().get(i).getScore() + " ");
+					System.out.println();
 				}
-				ArrayList<MemberDTO> result = lankingCon.lankingMember();
-				
-				
-			
-				
-				
-				
+//				ArrayList<MemberDTO> result = lankingCon.lankingMember();
 
 			} else if (num == 4) {
 				System.out.println("프로그램을 종료합니다.");
