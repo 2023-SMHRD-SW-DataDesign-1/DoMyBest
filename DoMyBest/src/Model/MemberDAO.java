@@ -45,9 +45,9 @@ public class MemberDAO {
 			row = psmt.executeUpdate();
 
 			if (row > 0) {
-				System.out.println("회원가입에 성공했습니다.");
+				System.out.println("축하드립니다. 회원가입에 성공했습니다.");
 			} else {
-				System.out.println("회원가입에 실패했습니다.");
+				System.out.println("죄송합니다. 회원가입에 실패했습니다.");
 			}
 
 		} catch (SQLException e) {
