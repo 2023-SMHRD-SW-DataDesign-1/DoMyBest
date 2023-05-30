@@ -125,7 +125,7 @@ public class MemberDAO {
 			else
 				System.out.println("삭제 실패");
 		}
-
+		
 		catch (Exception e) {
 			e.printStackTrace();
 		} finally {
