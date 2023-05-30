@@ -30,6 +30,7 @@ public class MemberDTO {
 		this.id = id;
 		this.pw = pw;
 	}
+
 	public MemberDTO(String id) {
 		this.id = id;
 	}

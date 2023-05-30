@@ -22,7 +22,7 @@ public class StageController {
 	PreparedStatement psmt;
 	ResultSet rs = null;
 
-	public void getConn() {
+	public void getConn() {  // JDBC 연결메소드
 		try {
 
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -41,7 +41,7 @@ public class StageController {
 		}
 	}
 
-	public StageController() {
+	public StageController() {  // 객체 생성과 동시에 customList에 값 추가할 생성자
 		getConn();
 		try {
 			String sql = "select * from customer";
@@ -67,9 +67,8 @@ public class StageController {
 
 	}
 
-	public void stageStart() {
+	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
 
-//		ArrayList<Integer> answerList = new ArrayList<>();
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(60);
 		int count = 0;
@@ -82,21 +81,21 @@ public class StageController {
 
 	}
 
-	public void solveP() {
+	public void solveP() {  // 문제 푸는 메소드
 		long startTime = System.currentTimeMillis();
-		long endTime = startTime + TimeUnit.SECONDS.toMillis(5);
-		String answerL[] = { "빵", "양상추", "토마토", "마요네즈", "케첩", "불고기", "새우", "치킨", "치즈", "피클" };
+		long endTime = startTime + TimeUnit.SECONDS.toMillis(10);   // 시간제한 5초
+		String answerL[] = { "빵", "양상추", "토마토", "마요네즈", "케첩", "불고기", "새우", "치킨", "치즈", "피클" }; 
 		String answer = null;
 		while (System.currentTimeMillis() < endTime) {
 
-			int temp = ran.nextInt(24);
-			char question[] = customList.get(temp).getRecipe().toCharArray();
+			int temp = ran.nextInt(24);    // 손님(24)명중에 랜덤뽑기
+			char question[] = customList.get(temp).getRecipe().toCharArray();   // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
 			System.out.println(customList.get(temp).getHamburger() + "주세요");
-
 			System.out.print("레시피 : ");
-			for (int i = 0; i < question.length; i++) {
+			
+			for (int i = 0; i < question.length; i++) {  // question 배열과 answerL배열 값을 비교해 레시피 작성
 				for (int j = 0; j < answerL.length; j++) {
-					if (question[i] == (char) (j + '0')) {
+					if (question[i] == (char) (j + '0')) {  
 						System.out.print(answerL[j] + " ");
 					}
 				}
@@ -107,7 +106,7 @@ public class StageController {
 			}
 
 			answer = scan.next();
-			if (System.currentTimeMillis() > endTime) {
+			if (System.currentTimeMillis() > endTime) {  // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
 				System.out.println("타임아웃");
 				break;
 			}
@@ -116,7 +115,7 @@ public class StageController {
 			} else {
 				System.out.println("오답");
 			}
-			if (!answer.equals(null)) {
+			if (!answer.equals(null)) { 
 				break;
 			}
 

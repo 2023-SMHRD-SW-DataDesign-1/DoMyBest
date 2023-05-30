@@ -1,12 +1,12 @@
 package Model;
 
 public class CustomerDTO {
-	
+
 	private String name;
 	private String gender;
 	private String hamburger;
 	private String recipe;
-	
+
 	public CustomerDTO(String name, String gender, String hamburger, String recipe) {
 
 		this.name = name;
@@ -46,9 +46,5 @@ public class CustomerDTO {
 	public void setRecipe(String recipe) {
 		this.recipe = recipe;
 	}
-	
-	
-	
-	
 
 }

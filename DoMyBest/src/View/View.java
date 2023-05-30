@@ -97,7 +97,7 @@ public class View {
 
 				MemberDAO rankingCon = new MemberDAO();
 				for (int i = 0; i < rankingCon.rankingMember().size(); i++) {
-					System.out.print((i+1)+"등 아이디는 ➳" + rankingCon.rankingMember().get(i).getId() + " ");
+					System.out.print((i + 1) + "등 아이디는 ➳" + rankingCon.rankingMember().get(i).getId() + " ");
 					System.out.print("이름은 ➳ " + rankingCon.rankingMember().get(i).getName() + " ");
 					System.out.print("점수는 ➳" + rankingCon.rankingMember().get(i).getScore() + " ");
 					System.out.println();
@@ -106,11 +106,11 @@ public class View {
 			} else if (num == 4) {
 				System.out.println("══════════════════ ೋღ 회원정보 삭제🌺 ღೋ ══════════════════════");
 				System.out.print("삭제하고 싶은 아이디 입력 : ");
-	            String id = scan.next();
+				String id = scan.next();
 //	            
-	            MemberDAO deleteCon = new MemberDAO();
-                String result = deleteCon.memberDelete(new MemberDTO(id));
-               
+				MemberDAO deleteCon = new MemberDAO();
+				String result = deleteCon.memberDelete(new MemberDTO(id));
+
 //	            
 //	            System.out.println("회원 삭제에 "+result+"하셨습니다.");
 			} else if (num == 5) {
