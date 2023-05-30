@@ -9,7 +9,6 @@ import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import DAO.PhoneDTO;
 import Model.CustomerDTO;
 import Model.MemberDAO;
 
