@@ -13,4 +13,3 @@ public class Test_main {
 	}
 
 }
-0
