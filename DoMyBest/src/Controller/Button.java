@@ -44,7 +44,7 @@ public class Button extends JFrame {
 		add(p);
 		setVisible(true);
 		addListner();
-		closeAfterDelay(5000);
+		closeAfterDelay(10000);
 	}
 
 	private void addListner() {

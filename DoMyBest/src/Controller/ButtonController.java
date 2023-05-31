@@ -1,72 +1,26 @@
 package Controller;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.AbstractQueuedLongSynchronizer;
 
-import Model.CustomerDTO;
+import Model.CustomerDAO;
 import Model.MemberDAO;
-import oracle.sql.CHAR;
 
 public class ButtonController {
 	Random ran = new Random();
 	Scanner scan = new Scanner(System.in);
-	ArrayList<CustomerDTO> customList = new ArrayList<>();
 	MemberDAO mdao = new MemberDAO();
+	StageController scon = new StageController();
+	CustomerDAO cdao = new CustomerDAO();
 	Connection conn;
 	PreparedStatement psmt;
 	ResultSet rs = null;
 
-	public void getConn() { // JDBC 연결메소드
-		try {
 
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String dburl = "jdbc:oracle:thin:@project-db-stu.smhrd.com:1524:xe";
-			String dbuser = "campus_g_0530_1";
-			String dbpw = "smhrd1";
-
-			conn = DriverManager.getConnection(dburl, dbuser, dbpw);
-			if (conn != null)
-				System.out.println("connect success");
-			else
-				System.out.println("connect fail");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public ButtonController() { // 객체 생성과 동시에 customList에 값 추가할 생성자
-		getConn();
-		try {
-			String sql = "select * from customer";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-				String name = rs.getString(1);
-				String gender = rs.getString(2);
-				String hamburger = rs.getString(3);
-				String recipe = rs.getString(4);
-
-				customList.add(new CustomerDTO(name, gender, hamburger, recipe));
-
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public ArrayList<CustomerDTO> cList() {
-		return customList;
-
-	}
 
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
 
@@ -84,14 +38,14 @@ public class ButtonController {
 
 	public void solveP() { // 문제 푸는 메소드
 		long startTime = System.currentTimeMillis();
-		long endTime = startTime + TimeUnit.SECONDS.toMillis(5);
+		long endTime = startTime + TimeUnit.SECONDS.toMillis(10);
 		String questionList[] = { "빵", "양상추", "토마토", "마요네즈", "케첩", "불고기", "새우", "치킨", "치즈", "피클" };
 
 		while (System.currentTimeMillis() < endTime) {
 
-			int temp = ran.nextInt(customList.size());
-			char recipeList[] = customList.get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
-			System.out.println(customList.get(temp).getHamburger() + "주세요");
+			int temp = ran.nextInt(cdao.cList().size());
+			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
+			System.out.println(cdao.cList().get(temp).getHamburger() + "주세요");
 
 			System.out.println();
 
@@ -125,6 +79,13 @@ public class ButtonController {
 				}
 				if (recipeList[j] == bt.answerGet()) {
 					System.out.println("정답");
+					if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
+						scon.easyLine(j); // 햄버거 쌓이는 시각효과 메서드
+					} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
+						scon.normalLine(j);
+					} else if (cdao.cList().get(temp).getDifficult().equals("HARD")) {
+						scon.hardLine(j);
+					}
 
 				} else {
 					System.out.println("오답");
