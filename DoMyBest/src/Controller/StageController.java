@@ -40,25 +40,31 @@ public class StageController {
 			int temp = ran.nextInt(24); // 손님(24)명중에 랜덤뽑기 customList.size로 변경해도 될듯?
 			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
 			System.out.println(cdao.cList().get(temp).getHamburger() + "주세요");
-			System.out.print("레시피 : ");
-
-			for (int i = 0; i < recipeList.length; i++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
-				for (int j = 0; j < questionList.length; j++) {
-					if (recipeList[i] == (char) (j + '0')) {
-						System.out.print(questionList[j] + " ");
-					}
-				}
-			}
 			System.out.println();
-			for (int i = 0; i < questionList.length; i++) {
-				System.out.print("[" + (i) + "]" + questionList[i] + " ");
-			}
 			System.out.println();
 //////////////////////////////////답안 분리 로직//////////////////////////////////////////////////////
 			for (int i = 0; i < recipeList.length; i++) {
+				//
+				for (int l = 0; l < questionList.length; l++) {
+					System.out.print("[" + (l) + "]" + questionList[l] + " ");
+				}
+				System.out.println();
+				//
+				//
+				System.out.print("레시피 : ");
+
+				for (int j = 0; j < recipeList.length; j++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
+					for (int k = 0; k < questionList.length; k++) {
+						if (recipeList[j] == (char) (k + '0')) {
+							System.out.print(questionList[k] + " ");
+						}
+					}
+				}
+				//
 				answerList.add(scan.nextInt());
 				if ((char) (answerList.get(i) + '0') == recipeList[i]) {
 					System.out.println("정답");
+					line(i);
 					// 아스키아트 메서드 불러올 곳
 
 				} else {
@@ -86,6 +92,58 @@ public class StageController {
 //////////////////////////////////////////////////////////////////////////////////
 		}
 
+	}
+
+	public void line(int n) {
+		if (n == 0) {
+			System.out.println("⠀⠀⠀⠀⠀⠀⢰⣶⣶⣶⣶⣶⣶⣷⣾⣿⣿⣿⡿⣿⣿⣿⠛⠛⠛⠛⠛⠋⢛⣁⣀⣤⣄⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+		} else if (n == 1) {
+			System.out.println("⠀⠀⠀⠀⠀⠈⠁⠉⢿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⣿⣿⣿⣿⣿⣿⣿⠟⠟⠛⠿⠍ ⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠹⠿⠻⣿⠛⠛⠿⣿⡿⠋⠀⠀⠀⠀⠉⠀⠈⠙⠙⢿⠅⠀⠀⠀⠀⠀⠀⠀⠀");
+
+			System.out.println("⠀⠀⠀⠀⠀⠀⢰⣶⣶⣶⣶⣶⣶⣷⣾⣿⣿⣿⡿⣿⣿⣿⠛⠛⠛⠛⠛⠋⢛⣁⣀⣤⣄⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+		} else if (n == 2) {
+			System.out.println("        ░░░░░░░░░░░░░░░░░░░░░░░░░░         ");
+
+			System.out.println("⠀⠀⠀⠀⠀⠈⠁⠉⢿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⣿⣿⣿⣿⣿⣿⣿⠟⠟⠛⠿⠍ ⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠹⠿⠻⣿⠛⠛⠿⣿⡿⠋⠀⠀⠀⠀⠉⠀⠈⠙⠙⢿⠅⠀⠀⠀⠀⠀⠀⠀⠀");
+
+			System.out.println("⠀⠀⠀⠀⠀⠀⢰⣶⣶⣶⣶⣶⣶⣷⣾⣿⣿⣿⡿⣿⣿⣿⠛⠛⠛⠛⠛⠋⢛⣁⣀⣤⣄⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+		} else if (n == 3) {
+			System.out.println("       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▓⠀⠀⠀⠀⠀⠀⠀⠀");
+
+			System.out.println("        ░░░░░░░░░░░░░░░░░░░░░░░░░░         ");
+
+			System.out.println("⠀⠀⠀⠀⠀⠈⠁⠉⢿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⣿⣿⣿⣿⣿⣿⣿⠟⠟⠛⠿⠍ ⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠹⠿⠻⣿⠛⠛⠿⣿⡿⠋⠀⠀⠀⠀⠉⠀⠈⠙⠙⢿⠅⠀⠀⠀⠀⠀⠀⠀⠀");
+
+			System.out.println("⠀⠀⠀⠀⠀⠀⢰⣶⣶⣶⣶⣶⣶⣷⣾⣿⣿⣿⡿⣿⣿⣿⠛⠛⠛⠛⠛⠋⢛⣁⣀⣤⣄⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+		} else if (n == 4) {
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣶⣶⣶⣾⣿⣽⣿⣷⣿⣷⣢⠽⢷⣶⣤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡗⢾⣿⣧⣷⢵⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⡆⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⣻⢿⣿⣿⣿⣿⣿⣭⣽⣿⣿⣦⣤⣴⣾⣭⣭⣭⣉⠙⡛⠛⠻⠿⠿⡗⠀⠀⠀⠀⠀⠀⠀");
+
+			System.out.println("       ▓▓▓▓▓▓▓▓▓▓▓▓▓▓██▓▓▓▓▓▓▓▓▓▓▓▓⠀⠀⠀⠀⠀⠀⠀⠀");
+
+			System.out.println("        ░░░░░░░░░░░░░░░░░░░░░░░░░░         ");
+
+			System.out.println("⠀⠀⠀⠀⠀⠈⠁⠉⢿⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⣿⣿⣿⣿⣿⣿⣿⠟⠟⠛⠿⠍ ⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠹⠿⠻⣿⠛⠛⠿⣿⡿⠋⠀⠀⠀⠀⠉⠀⠈⠙⠙⢿⠅⠀⠀⠀⠀⠀⠀⠀⠀");
+
+			System.out.println("⠀⠀⠀⠀⠀⠀⢰⣶⣶⣶⣶⣶⣶⣷⣾⣿⣿⣿⡿⣿⣿⣿⠛⠛⠛⠛⠛⠋⢛⣁⣀⣤⣄⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+		}
 	}
 
 }
