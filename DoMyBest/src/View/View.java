@@ -67,6 +67,8 @@ public class View {
 					if(num==1) {
 						StageController startgame = new StageController();
 						startgame.stageStart();
+						System.out.println();
+						System.out.println();
 					}
 					
 
