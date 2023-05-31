@@ -160,10 +160,17 @@ public class StageController {
 						timeSleep(2000);
 					}
 				} else {
-					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "        ŏ̥̥̥̥םŏ̥̥̥̥ 잘못된 재료번호입니다. 손님이 화가나서 돌아갔어요 ŏ̥̥̥̥םŏ̥̥̥̥ "
-							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n");
+//					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+//							+ "\n" + "\n" + "\n" + "\n" +
+//                    System.out.println("._＿＿＿_             ");
+//                    System.out.println("／　　　　＼　");
+//                    System.out.println("／　  _ノ 　ヽ_ ＼");
+//                    System.out.println("／   　（●）（●）＼");
+//                    System.out.println("|　    ///（_人_）///    ＼.......잘못된 재료번호입니다. 손님이 화가나서 돌아갔어요 ŏ̥̥̥̥םŏ̥̥̥̥  ..");
+//                    System.out.println("＼   　　　 　　   ＼ ");
+//                    System.out.println("／　 　　　 　    　＼")
+//							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+//							+ "\n" + "\n" + "\n");
 					System.out.println();
 					System.out.println();
 					timeSleep(2000);
