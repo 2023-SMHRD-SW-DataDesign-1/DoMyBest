@@ -105,6 +105,8 @@ public class StageController {
 				System.out.print("[" + (i) + "]" + answerL[i] + " ");
 			}
 
+			
+			
 			answer = scan.next();
 			if (System.currentTimeMillis() > endTime) {  // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
 				System.out.println("타임아웃");
