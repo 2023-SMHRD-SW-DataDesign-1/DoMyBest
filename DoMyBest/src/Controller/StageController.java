@@ -24,7 +24,20 @@ public class StageController {
 		int count = 0;
 		while (System.currentTimeMillis() < endTime) {
 			count++;
-			System.out.println(count + " 번 손님");
+			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬·");
+			System.out.println(" ∧＿∧");
+			System.out.println("（｡･ω･｡)つ━☆☆*");
+			System.out.println("⊂　　 ノ 　　　☆☆");
+			System.out.println("　し-Ｊ　　　°。+ * 。");
+			System.out.println("　　　　　　　　　.☆");
+			System.out.println("　　　　　　　　　 ｡ﾟﾟ･｡･ﾟﾟ。");
+			System.out.println("　　　　　　　　새로운 손님 등장! ｡ﾟ");
+			System.out.println("　　　　　　　　　　　ﾟ･｡･ﾟ");
+
+            System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬·");
+            System.out.println();
+
+			System.out.println("    "+count + "번 손님이 자바 버거에 들어왔습니다.");
 			mp3.play("Music/bell.mp3");
 			solveP();
 
@@ -43,7 +56,7 @@ public class StageController {
 
 			int temp = ran.nextInt(cdao.cList().size()); // DB 손님리스트 랜덤뽑기
 			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
-			System.out.println(cdao.cList().get(temp).getHamburger() + "주세요");
+			System.out.println("   "+"•────[ 주문 목록 ] "+cdao.cList().get(temp).getHamburger()+"────•");
 			System.out.println();
 			System.out.println();
 //////////////////////////////////답안 분리 로직//////////////////////////////////////////////////////
