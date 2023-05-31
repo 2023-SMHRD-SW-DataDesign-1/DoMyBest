@@ -10,16 +10,26 @@ import Model.MemberDTO;
 public class View {
 
 	public static void main(String[] args) {
+//		int count ;
 		ViewController vcon = new ViewController();
 		vcon.mainView();
 		Scanner scan = new Scanner(System.in);
 		// Controller 의 메소드를 호출하기위해 Stagecontroller 객체 호출
 		StageController con = new StageController();
+		System.out.println("        .............Behind Story............");
+		System.out.println("         햄버거가 너무 좋아서 세끼 햄버거만 먹던 나는..");
+		System.out.println("        열심히 돈을 모아서 JAVA HAMBURGER를 차렸다.");
+		System.out.println("           그리고 드디어 오늘은 가게를 오픈하는 날!");
+		System.out.println(" 나의 손맛이 들어간 맛있는 버거의 맛을 사람들이 알아주길 바라며...");
+		System.out.println("            설레는 마음으로 가게 운영을 시작해보자!");
+		System.out.println();
 		while (true) {
-			System.out.println("═══════════ ೋღ JAVA HAMBURER GAME 회원 시스템🌺 ღೋ ═════════");
+			System.out.println("═══════════ ೋღ JAVA HAMBURGER GAME 회원 시스템🌺 ღೋ ═════════");
 			System.out.print("[1] 회원 가입 [2] 로그인 [3] 랭킹조회 [4] 회원 삭제 [5] 게임 종료  >>");
 			System.out.println();
+			System.out.print("          원하시는 번호를 입력해주세요 >>>>>>  ");
 			int num = scan.nextInt();
+			System.out.println();
 			// 회원가입
 			if (num == 1) {
 				System.out.println("══════════════════ ೋღ 회원가입🌺 ღೋ ══════════════════════");
@@ -39,7 +49,7 @@ public class View {
 				System.out.println("══════════════════ ೋღ 로그인🌺 ღೋ ═══════════════════");
 				System.out.print("ID를 입력해주세요 >> ");
 				String id = scan.next();
-				System.out.print("PW를 입력해주세요 >>");
+				System.out.print("PW를 입력해주세요 >> ");
 				String pw = scan.next();
 
 				MemberDAO loginCon = new MemberDAO();
@@ -47,9 +57,18 @@ public class View {
 
 				if (name != null) {
 					System.out.println(name + "님이 로그인하셨습니다.");
-					System.out.print("♪~ ♬ ♪♬~♪ ♪~ ♬ ♪♬~♪ ♪~ ♬ ♪♬~~ ♬ ♪~ ♬ ♪♬~♪ ♪~ ");
-					System.out.print("♪~ ♬ ♪♬~♪자바 버거에 오신 것을 환영~ ♬ ♪~ ♬ ♪♬~♪ ♪~ ");
-					System.out.println("✿°•∘ɷ∘•°✿ ... ✿°•∘ɷ∘•°✿ ... ✿°•∘ɷ∘•°✿");
+					System.out.println();
+					System.out.println("══════════════════   "+name+"님 안녕하세요!　══════════════════ ");
+					System.out.println("➳➳➳➳➳➳➳➳➳➳[  게임을 시작하시겠습니까?  ]➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳");
+					System.out.println("                   [1] 예 [2] 아니오");
+					System.out.println();
+					System.out.print("            번호를 입력해주세요  >>>>>  ");
+					num = scan.nextInt();
+					if(num==1) {
+						StageController startgame = new StageController();
+						startgame.stageStart();
+					}
+					
 
 					// 게임 들어가서 어떻게 게임 진행될건지는 여기서부터~!
 					// 생각해보기~!
