@@ -1,71 +1,18 @@
 package Controller;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import Model.CustomerDTO;
-import Model.MemberDAO;
+import Model.CustomerDAO;
 
 public class StageController {
 
 	Random ran = new Random();
 	Scanner scan = new Scanner(System.in);
-	ArrayList<CustomerDTO> customList = new ArrayList<>();
-	MemberDAO mdao = new MemberDAO();
-	Connection conn;
-	PreparedStatement psmt;
-	ResultSet rs = null;
 
-	public void getConn() { // JDBC 연결메소드
-		try {
-
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String dburl = "jdbc:oracle:thin:@project-db-stu.smhrd.com:1524:xe";
-			String dbuser = "campus_g_0530_1";
-			String dbpw = "smhrd1";
-
-			conn = DriverManager.getConnection(dburl, dbuser, dbpw);
-			if (conn != null)
-				System.out.println("connect success");
-			else
-				System.out.println("connect fail");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public StageController() { // 객체 생성과 동시에 customList에 값 추가할 생성자
-		getConn();
-		try {
-			String sql = "select * from customer";
-			psmt = conn.prepareStatement(sql);
-			rs = psmt.executeQuery();
-
-			while (rs.next()) {
-				String name = rs.getString(1);
-				String gender = rs.getString(2);
-				String hamburger = rs.getString(3);
-				String recipe = rs.getString(4);
-
-				customList.add(new CustomerDTO(name, gender, hamburger, recipe));
-
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public ArrayList<CustomerDTO> cList() {
-		return customList;
-
-	}
+	CustomerDAO cdao = new CustomerDAO();
 
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
 
@@ -91,8 +38,8 @@ public class StageController {
 		while (System.currentTimeMillis() < endTime) {
 
 			int temp = ran.nextInt(24); // 손님(24)명중에 랜덤뽑기 customList.size로 변경해도 될듯?
-			char recipeList[] = customList.get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
-			System.out.println(customList.get(temp).getHamburger() + "주세요");
+			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
+			System.out.println(cdao.cList().get(temp).getHamburger() + "주세요");
 			System.out.print("레시피 : ");
 
 			for (int i = 0; i < recipeList.length; i++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
@@ -112,6 +59,7 @@ public class StageController {
 				answerList.add(scan.nextInt());
 				if ((char) (answerList.get(i) + '0') == recipeList[i]) {
 					System.out.println("정답");
+					// 아스키아트 메서드 불러올 곳
 
 				} else {
 					System.out.println("오답");
@@ -123,9 +71,7 @@ public class StageController {
 				}
 			}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////			
-			
-			
-			
+
 //////////////////////////한줄 답안 로직////////////////////////////////////////
 //			answer = scan.next();
 
