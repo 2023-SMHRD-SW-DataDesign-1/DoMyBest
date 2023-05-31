@@ -2,6 +2,7 @@ package View;
 
 import java.util.Scanner;
 
+import Controller.ButtonController;
 import Controller.StageController;
 import Controller.ViewController;
 import Model.MemberDAO;
@@ -46,39 +47,63 @@ public class View {
 
 				// 로그인
 			} else if (num == 2) {
-				System.out.println("══════════════════ ೋღ 로그인🌺 ღೋ ═══════════════════");
-				System.out.print("ID를 입력해주세요 >> ");
-				String id = scan.next();
-				System.out.print("PW를 입력해주세요 >> ");
-				String pw = scan.next();
 
-				MemberDAO loginCon = new MemberDAO();
-				String name = loginCon.loginMember(new MemberDTO(id, pw));
+				while (true) {
+					System.out.println("══════════════════ ೋღ 로그인🌺 ღೋ ═══════════════════");
+					System.out.print("ID를 입력해주세요 >> ");
+					String id = scan.next();
+					System.out.print("PW를 입력해주세요 >> ");
+					String pw = scan.next();
 
-				if (name != null) {
-					System.out.println(name + "님이 로그인하셨습니다.");
-					System.out.println();
-					System.out.println("══════════════════   "+name+"님 안녕하세요!　══════════════════ ");
-					System.out.println("➳➳➳➳➳➳➳➳➳➳[  게임을 시작하시겠습니까?  ]➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳");
-					System.out.println("                   [1] 예 [2] 아니오");
-					System.out.println();
-					System.out.print("            번호를 입력해주세요  >>>>>  ");
-					num = scan.nextInt();
-					if(num==1) {
-						StageController startgame = new StageController();
-						startgame.stageStart();
+					MemberDAO loginCon = new MemberDAO();
+					String name = loginCon.loginMember(new MemberDTO(id, pw));
+
+					if (name != null) {
+						System.out.println(name + "님이 로그인하셨습니다.");
 						System.out.println();
-						System.out.println();
-					} else if(num==2) {
-						vcon.mainView();
+						System.out.println("══════════════════   " + name + "님 안녕하세요!　══════════════════ ");
+						while (true) {
+							System.out.println("➳➳➳➳➳➳➳➳➳➳[  게임을 시작하시겠습니까?  ]➳➳➳➳➳➳➳➳➳➳➳➳➳➳➳");
+							System.out.println("                   [1] 예 [2] 아니오");
+							System.out.println();
+							System.out.print("            번호를 입력해주세요  >>>>>  ");
+							num = scan.nextInt();
+							if (num == 1) {
+								while (true) {
+									System.out.println("게임 모드 선택");
+									System.out.print("[1] 키보드모드 [2] 마우스모드 >> ");
+									num = scan.nextInt();
+									if (num == 1) {
+										StageController keygame = new StageController();
+										keygame.stageStart();
+										System.out.println();
+										System.out.println();
+										break;
+									} else if (num == 2) {
+										ButtonController mousegame = new ButtonController();
+										mousegame.stageStart();
+										System.out.println();
+										System.out.println();
+										break;
+									} else {
+										System.out.println("잘못된 입력");
+									}
+								}
+								break;
+
+							} else if (num == 2) {
+								break;
+							} else {
+								System.out.println("잘못된 입력" + "\n");
+							}
+						}
+
+						// 게임 들어가서 어떻게 게임 진행될건지는 여기서부터~!
+						// 생각해보기~!
+						break;
+					} else if (name == null){
+						System.out.println("아이디와 비밀번호를 잘못입력하셨습니다." + "\n");
 					}
-					
-
-					// 게임 들어가서 어떻게 게임 진행될건지는 여기서부터~!
-					// 생각해보기~!
-
-				} else {
-					System.out.println("아이디와 비밀번호를 잘못입력하셨습니다.");
 				}
 
 			} else if (num == 3) {
