@@ -45,8 +45,9 @@ public class CustomerDAO {
 				String gender = rs.getString(2);
 				String hamburger = rs.getString(3);
 				String recipe = rs.getString(4);
+				String difficult = rs.getString(5);
 
-				customList.add(new CustomerDTO(name, gender, hamburger, recipe));
+				customList.add(new CustomerDTO(name, gender, hamburger, recipe, difficult));
 
 			}
 		} catch (Exception e) {

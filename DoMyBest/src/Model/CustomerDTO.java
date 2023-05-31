@@ -6,6 +6,17 @@ public class CustomerDTO {
 	private String gender;
 	private String hamburger;
 	private String recipe;
+	private String difficult;
+
+	
+	
+	public CustomerDTO(String name, String gender, String hamburger, String recipe, String difficult) {
+		this.name = name;
+		this.gender = gender;
+		this.hamburger = hamburger;
+		this.recipe = recipe;
+		this.difficult = difficult;
+	}
 
 	public CustomerDTO(String name, String gender, String hamburger, String recipe) {
 
@@ -13,6 +24,14 @@ public class CustomerDTO {
 		this.gender = gender;
 		this.hamburger = hamburger;
 		this.recipe = recipe;
+	}
+
+	public String getDifficult() {
+		return difficult;
+	}
+
+	public void setDifficult(String difficult) {
+		this.difficult = difficult;
 	}
 
 	public String getName() {
