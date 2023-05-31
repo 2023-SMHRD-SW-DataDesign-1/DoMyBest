@@ -11,7 +11,7 @@ import Model.MemberDTO;
 public class View {
 
 	public static void main(String[] args) {
-//		int count ;
+		
 		ViewController vcon = new ViewController();
 		vcon.mainView();
 		Scanner scan = new Scanner(System.in);
@@ -101,7 +101,7 @@ public class View {
 						// 게임 들어가서 어떻게 게임 진행될건지는 여기서부터~!
 						// 생각해보기~!
 						break;
-					} else if (name == null){
+					} else if (name == null) {
 						System.out.println("아이디와 비밀번호를 잘못입력하셨습니다." + "\n");
 					}
 				}
