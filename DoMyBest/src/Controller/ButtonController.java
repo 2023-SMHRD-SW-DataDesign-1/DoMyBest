@@ -59,31 +59,40 @@ public class ButtonController {
 
 			int temp = ran.nextInt(cdao.cList().size());
 			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
-			System.out.println(cdao.cList().get(temp).getHamburger() + "주세요");
-			System.out.println(cdao.cList().get(temp).getName() + " 님의 주문입니다.");
-			System.out.println("        " + "•────[ 주문 목록 ] " + cdao.cList().get(temp).getHamburger() + "────•");
+			System.out.println("────────✧ " + cdao.cList().get(temp).getName() + " 님의 주문 ✧───────────────────────");
+			System.out.println("         " + "•──────[  " + cdao.cList().get(temp).getHamburger() + "  ]──────•");
 			System.out.println();
-			System.out.println(" ⭑:༅｡.｡༅::✼✿ ──────현재 재료 목록────── ✿✼:*ﾟ:༅｡.｡༅:*･ﾟﾟ･⭑" + "\n");
+			System.out.println("       ╔═════ 현재 JAVA BURGER 재료 목록 ═════╗");
 
-			for (int j = 0; j < questionList.length; j++) {
-				System.out.print("[" + (j) + "]" + questionList[j] + " ");
+			for (int l = 0; l < questionList.length; l++) {
+				if (l == 5) {
+					System.out.print("[" + (l) + "]" + questionList[l] + "  ");
+				} else {
+					System.out.print("[" + (l) + "]" + questionList[l] + "\t" + "  ");
+				}
+				if (l == 4) {
+					System.out.println();
+				}
 			}
-			System.out.println();
-			System.out.println();
-			System.out.println("         ╔═══ 자, 그럼 햄버거를 한 번 만들어 볼까요?═══╗");
-			System.out.print("☆⁺˚*♡⁺˚*☆ ☽⋅─────•[ 햄버거 제조 순서 ]≫≫ ");
 
 			System.out.println();
+			System.out.println();
+			System.out.println("☆⁺˚*♡⁺˚*☆ ☽⋅─────•[ 햄버거 제조 순서 ]────☆⁺˚*♡⁺˚*☆─ ");
+			System.out.println("--------------------------------------------------------------");
+			System.out.print("      ");
 			long remainingTime = endTime - System.currentTimeMillis();
 			for (int j = 0; j < recipeList.length; j++) {
 				for (int k = 0; k < recipeList.length; k++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
 					for (int l = 0; l < questionList.length; l++) {
 						if (recipeList[k] == (char) (l + '0')) {
-							System.out.print(questionList[l] + " ");
+							System.out.print(questionList[l] + " ☞ ");
 						}
 					}
 				}
-				System.out.println("         재료 번호를 순서대로 클릭 해 주세요");
+				System.out.println();
+				System.out.println("--------------------------------------------------------------");
+				System.out.println("         재료 번호를 순서대로 클릭 해 주세요" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+						+ "\n" + "\n" + "\n");
 				Button bt = new Button();
 				if (remainingTime > 0) {
 					synchronized (bt) {
@@ -100,6 +109,8 @@ public class ButtonController {
 				}
 				if (recipeList[j] == bt.answerGet()) {
 					System.out.println("          ʚ(*´꒳`*)ɞ ~♡ 정답! 다음 재료번호 입력해주세요!" + "");
+					System.out
+							.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 					if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
 						scon.easyLine(j); // 햄버거 쌓이는 시각효과 메서드
 					} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
@@ -109,14 +120,27 @@ public class ButtonController {
 					}
 
 				} else {
-					System.out.println("        ŏ̥̥̥̥םŏ̥̥̥̥ 잘못된 재료번호입니다. 손님이 화가나서 돌아갔어요 ŏ̥̥̥̥םŏ̥̥̥̥ ");
+					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "        ŏ̥̥̥̥םŏ̥̥̥̥ 잘못된 재료번호입니다. 손님이 화가나서 돌아갔어요 ŏ̥̥̥̥םŏ̥̥̥̥ "
+							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n");
 					System.out.println();
 					System.out.println();
+					timeSleep(2000);
 					break;
 				}
 				if (System.currentTimeMillis() > endTime) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
-					System.out.println("시간이 초과했어요 ŏ̥̥̥̥םŏ̥̥̥̥  손님이 집으로 돌아갔어요ŏ̥̥̥̥םŏ̥̥̥̥  ");
+					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "시간이 초과했어요 ŏ̥̥̥̥םŏ̥̥̥̥  손님이 집으로 돌아갔어요ŏ̥̥̥̥םŏ̥̥̥̥  " + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n");
+					timeSleep(2000);
 					break;
+				}
+
+				if (j == (recipeList.length - 1)) {
+					System.out.println("성공!" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+					timeSleep(2000);
 				}
 
 			}
@@ -124,6 +148,14 @@ public class ButtonController {
 
 		}
 
+	}
+
+	public void timeSleep(int n) {
+		try {
+			Thread.sleep(n); // 1000 = 1초
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
