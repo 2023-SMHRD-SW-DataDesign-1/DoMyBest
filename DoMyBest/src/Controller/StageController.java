@@ -24,19 +24,15 @@ public class StageController {
 		int count = 0;
 		while (System.currentTimeMillis() < endTime) {
 			count++;
-			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬·");
+			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
 			System.out.println(" ∧＿∧");
 			System.out.println("（｡･ω･｡)つ━☆☆*");
 			System.out.println("⊂　　 ノ 　　　☆☆");
 			System.out.println("　し-Ｊ　　　°。+ * 。");
-			System.out.println("　　　　　　　　　.☆");
-			System.out.println("　　　　　　　　　 ｡ﾟﾟ･｡･ﾟﾟ。");
 			System.out.println("　　　　　　　　새로운 손님 등장! ｡ﾟ");
 			System.out.println("　　　　　　　　　　　ﾟ･｡･ﾟ");
-
-            System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬·");
+            System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
             System.out.println();
-
 			System.out.println("            "+count + "번 손님이 자바 버거에 들어왔습니다.");
 			mp3.play("Music/bell.mp3");
 			solveP();
