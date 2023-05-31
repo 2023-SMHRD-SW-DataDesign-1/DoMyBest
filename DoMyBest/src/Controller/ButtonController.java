@@ -8,9 +8,11 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.locks.AbstractQueuedLongSynchronizer;
 
 import Model.CustomerDTO;
 import Model.MemberDAO;
+import oracle.sql.CHAR;
 
 public class ButtonController {
 	Random ran = new Random();
@@ -41,25 +43,25 @@ public class ButtonController {
 	}
 
 	public ButtonController() { // 객체 생성과 동시에 customList에 값 추가할 생성자
-	      getConn();
-	      try {
-	         String sql = "select * from customer";
-	         psmt = conn.prepareStatement(sql);
-	         rs = psmt.executeQuery();
+		getConn();
+		try {
+			String sql = "select * from customer";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
 
-	         while (rs.next()) {
-	            String name = rs.getString(1);
-	            String gender = rs.getString(2);
-	            String hamburger = rs.getString(3);
-	            String recipe = rs.getString(4);
+			while (rs.next()) {
+				String name = rs.getString(1);
+				String gender = rs.getString(2);
+				String hamburger = rs.getString(3);
+				String recipe = rs.getString(4);
 
-	            customList.add(new CustomerDTO(name, gender, hamburger, recipe));
+				customList.add(new CustomerDTO(name, gender, hamburger, recipe));
 
-	         }
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	      }
-	   }
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 	public ArrayList<CustomerDTO> cList() {
 		return customList;
@@ -82,57 +84,59 @@ public class ButtonController {
 
 	public void solveP() { // 문제 푸는 메소드
 		long startTime = System.currentTimeMillis();
-		long endTime = startTime + TimeUnit.SECONDS.toMillis(5); // 시간제한 5초
-		String answerL[] = { "빵", "양상추", "토마토", "마요네즈", "케첩", "불고기", "새우", "치킨", "치즈", "피클" };
+		long endTime = startTime + TimeUnit.SECONDS.toMillis(5);
+		String questionList[] = { "빵", "양상추", "토마토", "마요네즈", "케첩", "불고기", "새우", "치킨", "치즈", "피클" };
 
 		while (System.currentTimeMillis() < endTime) {
 
-			int temp = ran.nextInt(24); // 손님(24)명중에 랜덤뽑기
-//	         char question[] = customList.get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
-			String question[] = { "빵", "고기", "양상추", "빵" };
+			int temp = ran.nextInt(customList.size());
+			char recipeList[] = customList.get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
 			System.out.println(customList.get(temp).getHamburger() + "주세요");
+
+			System.out.println();
+
+			for (int j = 0; j < questionList.length; j++) {
+				System.out.print("[" + (j) + "]" + questionList[j] + " ");
+			}
+			System.out.println();
 			System.out.print("레시피 : ");
 
-			for (int i = 0; i < question.length; i++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
-				for (int j = 0; j < answerL.length; j++) {
-					if (question[i] == (String) (j + "0")) {
-						System.out.print(answerL[j] + " ");
+			for (int j = 0; j < recipeList.length; j++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
+				for (int k = 0; k < questionList.length; k++) {
+					if (recipeList[j] == (char) (k + '0')) {
+						System.out.print(questionList[k] + " ");
 					}
 				}
 			}
 			System.out.println();
-			for (int i = 0; i < answerL.length; i++) {
-				System.out.print("[" + (i) + "]" + answerL[i] + " ");
-			}
-			System.out.println();
-			for (int i = 0; i < question.length; i++) {
+			long remainingTime = endTime - System.currentTimeMillis();
+			for (int j = 0; j < recipeList.length; j++) {
 				Button bt = new Button();
-				synchronized (bt) {
-					try {
-						bt.wait(endTime - System.currentTimeMillis());
-					} catch (InterruptedException e) {
-						e.printStackTrace();
+				if (remainingTime > 0) {
+					synchronized (bt) {
+						try {
+							bt.wait(endTime - System.currentTimeMillis());
+						} catch (InterruptedException e) {
+							e.printStackTrace();
+						}
 					}
+				} else {
+					break;
 				}
-				System.out.println(bt.answer);
-				if (question[i].equals(bt.answer)) {
+				if (recipeList[j] == bt.answerGet()) {
 					System.out.println("정답");
+
 				} else {
 					System.out.println("오답");
 					break;
 				}
+				if (System.currentTimeMillis() > endTime) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
+					System.out.println("타임아웃");
+					break;
+				}
 
 			}
-
-			if (System.currentTimeMillis() > endTime) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
-				System.out.println("타임아웃");
-				break;
-			}
-//	         if (testList1.equals(customList.get(temp).getRecipe())) {
-//	            System.out.println("정답");
-//	         } else {
-//	            System.out.println("오답");
-//	         }
+			break;
 
 		}
 
