@@ -24,7 +24,8 @@ public class ButtonController {
 
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
 
-		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
+//		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
+		mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bgm.mp3"); // 수환 개인컴퓨터용
 
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(60);
@@ -41,7 +42,8 @@ public class ButtonController {
 			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
 			System.out.println();
 			System.out.println("                   ♫ 띵 동 ♪  ");
-			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
+//			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
+			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
 			solveP();
 
 		}
@@ -91,7 +93,8 @@ public class ButtonController {
 							e.printStackTrace();
 						}
 					}
-					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/chap.mp3");
+//					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/chap.mp3");
+					mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/chap.mp3"); // 수환 개인컴퓨터용
 				} else {
 					break;
 				}

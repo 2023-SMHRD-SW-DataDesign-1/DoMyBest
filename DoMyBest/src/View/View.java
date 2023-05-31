@@ -11,7 +11,7 @@ import Model.MemberDTO;
 public class View {
 
 	public static void main(String[] args) {
-		
+
 		ViewController vcon = new ViewController();
 		vcon.mainView();
 		Scanner scan = new Scanner(System.in);
@@ -76,10 +76,9 @@ public class View {
 									if (num == 1) {
 										System.out.println("게임을 시작합니다!");
 										StageController keygame = new StageController();
-										keygame.timeSleep(2000);
-										
-										
-										
+										keygame.timeSleep(1000);
+										keygame.countDown();
+
 										keygame.stageStart();
 										System.out.println();
 										System.out.println();
