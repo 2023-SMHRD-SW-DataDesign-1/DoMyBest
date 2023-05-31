@@ -74,7 +74,12 @@ public class View {
 									System.out.print("[1] 키보드모드 [2] 마우스모드 >> ");
 									num = scan.nextInt();
 									if (num == 1) {
+										System.out.println("게임을 시작합니다!");
 										StageController keygame = new StageController();
+										keygame.timeSleep(2000);
+										
+										
+										
 										keygame.stageStart();
 										System.out.println();
 										System.out.println();
