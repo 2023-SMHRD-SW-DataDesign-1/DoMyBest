@@ -14,7 +14,7 @@ public class StageController {
 	Random ran = new Random();
 	Scanner scan = new Scanner(System.in);
 	CustomerDAO cdao = new CustomerDAO();
-	MP3Player mp3 = new MP3Player();
+//	MP3Player mp3 = new MP3Player();
 	MemberDAO mdao = new MemberDAO();
 
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
@@ -43,19 +43,23 @@ public class StageController {
 		}
 
 		while (true) {
-			System.out.println("랭킹 등록 할거?");
-			System.out.println("[1] 등록   [2] 등록안함");
+			System.out.println(". ʕ⑅˶>⤙<˶ʔ");
+			System.out.println( "ପ(  づ  づ )ଓ(최고!)");
+	        System.out.println();
+	        System.out.println("╓═════ 랭킹을 등록하시겠어요?═════╖");
+			System.out.println("     [1] 등록   [2] 등록안함");
+			System.out.print("     번호를 입력해주세요 >>>");
 			int num = scan.nextInt();
 			if (num == 1) {
-				System.out.print("id 입력 >> ");
+				System.out.print(" ･ﾟ✧*:･ﾟ✧ 아이디를 입력해주세요 >> ");
 				String id = scan.next();
 				mdao.rankingInsert(id, score);
 				break;
 			} else if (num == 2) {
-				System.out.println("등록안함 , 초기화면으로");
+				System.out.println("( ‘ o ‘ ) 등록을 하지 않습니다. 초기화면으로 돌아갑니다");
 				break;
 			} else {
-				System.out.println("잘못된 입력");
+				System.out.println("(❛⌓❛ ) 잘못된 입력입니다. 다시 입력해주세요 ");
 			}
 		}
 
@@ -116,7 +120,11 @@ public class StageController {
 				for (int j = 0; j < recipeList.length; j++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
 					for (int k = 0; k < questionList.length; k++) {
 						if (recipeList[j] == (char) (k + '0')) {
-							System.out.print(questionList[k] + " ☞ ");
+							if (j < recipeList.length - 1) {
+								System.out.print(questionList[k] + " ☞ ");
+							} else {
+								System.out.print(questionList[k]);
+							}
 						}
 					}
 				}
