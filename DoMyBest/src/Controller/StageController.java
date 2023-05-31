@@ -29,7 +29,7 @@ public class StageController {
 			System.out.println("　　　　　　（｡･ω･｡)つ━☆☆*");
 			System.out.println("　　　　　　⊂　　 ノ 　　　☆☆");
 			System.out.println("　　　　　　　し-Ｊ　　　°。+ * 。");
-			System.out.println("　　　　　　　　　　　　　　"+count+" 손님 등장! ｡ﾟ");
+			System.out.println("　　　　　　　　　　　　　　"+count+"번째 손님 등장! ｡ﾟ");
 			System.out.println("　　　　　　　　　　　　　　　　　ﾟ･｡･ﾟ");
             System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
             System.out.println();
@@ -52,6 +52,7 @@ public class StageController {
 
 			int temp = ran.nextInt(cdao.cList().size()); // DB 손님리스트 랜덤뽑기
 			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
+			System.out.println(cdao.cList().get(temp).getName()+ " 님의 주문입니다.");
 			System.out.println("        "+"•────[ 주문 목록 ] "+cdao.cList().get(temp).getHamburger()+"────•");
 			System.out.println();
 //////////////////////////////////답안 분리 로직//////////////////////////////////////////////////////
