@@ -3,14 +3,15 @@ package View;
 import java.util.Scanner;
 
 import Controller.StageController;
+import Controller.ViewController;
 import Model.MemberDAO;
 import Model.MemberDTO;
 
 public class View {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		ViewController vcon = new ViewController();
+		vcon.mainView();
 		Scanner scan = new Scanner(System.in);
 		// Controller 의 메소드를 호출하기위해 Stagecontroller 객체 호출
 		StageController con = new StageController();
