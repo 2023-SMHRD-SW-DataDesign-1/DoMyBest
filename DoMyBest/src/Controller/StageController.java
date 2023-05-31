@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import Model.CustomerDAO;
 import javazoom.jl.player.MP3Player;
 
-public class StageController {
+public class StageController{
 
 	Random ran = new Random();
 	Scanner scan = new Scanner(System.in);
@@ -25,15 +25,14 @@ public class StageController {
 		while (System.currentTimeMillis() < endTime) {
 			count++;
 			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
-			System.out.println("　　　　　　 ∧＿∧");
-			System.out.println("　　　　　　（｡･ω･｡)つ━☆☆*");
-			System.out.println("　　　　　　⊂　　 ノ 　　　☆☆");
-			System.out.println("　　　　　　　し-Ｊ　　　°。+ * 。");
-			System.out.println("　　　　　　　　　　　　　　"+count+"번째 손님 등장! ｡ﾟ");
-			System.out.println("　　　　　　　　　　　　　　　　　ﾟ･｡･ﾟ");
+			System.out.println(" 　　　　　　∧＿∧");
+			System.out.println("　　　　　 （｡･ω･｡)つ━☆☆* 띵 ~ 동 ♪ ");
+			System.out.println("　　　　　　⊂　　 ノ 　　 　☆☆");
+			System.out.println("　　　　　　　し-Ｊ　　   °。 * 。");
+			System.out.println("　　　　　　　　　    "+count+"번째 손님 등장!ﾟ");
+			System.out.println("　　　　　　　　　　　　　　  ﾟ･｡･ﾟ");
             System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
             System.out.println();
-            System.out.println("                   ♫ 띵 동 ♪  ");
 			mp3.play("Music/bell.mp3");
 			solveP();
 
@@ -52,13 +51,13 @@ public class StageController {
 
 			int temp = ran.nextInt(cdao.cList().size()); // DB 손님리스트 랜덤뽑기
 			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
-			System.out.println(cdao.cList().get(temp).getName()+ " 님의 주문입니다.");
-			System.out.println("        "+"•────[ 주문 목록 ] "+cdao.cList().get(temp).getHamburger()+"────•");
+			System.out.println("────────✧ "+cdao.cList().get(temp).getName()+ " 님의 주문 ✧───────────────────────");
+			System.out.println("     "+"•──────[ 주문 목록 ] "+cdao.cList().get(temp).getHamburger()+"──────•");
 			System.out.println();
 //////////////////////////////////답안 분리 로직//////////////////////////////////////////////////////
 			for (int i = 0; i < recipeList.length; i++) {
 				//
-				System.out.println(" ⭑:༅｡.｡༅::✼✿ ──────현재 재료 목록────── ✿✼:*ﾟ:༅｡.｡༅:*･ﾟﾟ･⭑");
+				System.out.println(" ✎✎✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏현재 재료 목록﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏");
 				System.out.println();
 				for (int l = 0; l < questionList.length; l++) {
 					System.out.print("[" + (l) + "]" + questionList[l] + " ");

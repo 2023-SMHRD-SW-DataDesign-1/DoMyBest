@@ -35,9 +35,9 @@ public class View {
 				System.out.println("══════════════════ ೋღ 회원가입🌺 ღೋ ══════════════════════");
 				System.out.print("원하는 ID를 입력하세요 >> ");
 				String id = scan.next();
-				System.out.print("원하는 PW를 입력하세요 >>");
+				System.out.print("원하는 PW를 입력하세요 >> ");
 				String pw = scan.next();
-				System.out.print("원하는 NAME를 입력하세요 >>");
+				System.out.print("원하는 NAME를 입력하세요 >> ");
 				String name = scan.next();
 
 				MemberDAO insertCon = new MemberDAO();
@@ -69,6 +69,8 @@ public class View {
 						startgame.stageStart();
 						System.out.println();
 						System.out.println();
+					} else if(num==2) {
+						vcon.mainView();
 					}
 					
 

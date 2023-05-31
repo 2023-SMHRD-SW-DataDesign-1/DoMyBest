@@ -1,9 +1,13 @@
 package View;
 
+import Controller.StageController;
+
 public class View_test {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		 
+		StageController test = new StageController();
+		test.stageStart();
 
 	}
 
