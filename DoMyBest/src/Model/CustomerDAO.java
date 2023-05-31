@@ -16,17 +16,17 @@ public class CustomerDAO {
 
 	public void getConn() { // JDBC 연결메소드
 		try {
-
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			String dburl = "jdbc:oracle:thin:@project-db-stu.smhrd.com:1524:xe";
 			String dbuser = "campus_g_0530_1";
 			String dbpw = "smhrd1";
 
 			conn = DriverManager.getConnection(dburl, dbuser, dbpw);
-			if (conn != null)
-				System.out.println("connect success");
-			else
-				System.out.println("connect fail");
+			if (conn != null) {
+//				System.out.println("connect success");
+			} else {
+//				System.out.println("connect fail");				
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
