@@ -13,6 +13,8 @@ public class View {
 	public static void main(String[] args) {
 
 		ViewController vcon = new ViewController();
+		StageController keygame = new StageController();
+		ButtonController mousegame = new ButtonController();
 		vcon.mainView();
 		Scanner scan = new Scanner(System.in);
 		// Controller 의 메소드를 호출하기위해 Stagecontroller 객체 호출
@@ -72,13 +74,13 @@ public class View {
 								while (true) {
 									System.out.println();
 									System.out.println("➳➳➳➳➳➳➳➳➳➳[  게임모드를 선택해주세요 ]➳➳➳➳➳➳➳➳➳➳➳➳➳➳");
-									System.out.println("             [1] 키보드모드 [2] 마우스모드 ");
+									System.out.println("         [1] 키보드모드 [2] 마우스모드 ");
 									System.out.print("            번호를 입력해주세요  >>>>>  ");
 									num = scan.nextInt();
 									if (num == 1) {
-										
+
 										System.out.println("게임을 시작합니다!");
-										StageController keygame = new StageController();
+										
 										keygame.timeSleep(1000);
 										keygame.countDown();
 
@@ -87,7 +89,10 @@ public class View {
 										System.out.println();
 										break;
 									} else if (num == 2) {
-										ButtonController mousegame = new ButtonController();
+										System.out.println("게임을 시작합니다!");
+									
+										mousegame.timeSleep(1000);
+										keygame.countDown();
 										mousegame.stageStart();
 										System.out.println();
 										System.out.println();

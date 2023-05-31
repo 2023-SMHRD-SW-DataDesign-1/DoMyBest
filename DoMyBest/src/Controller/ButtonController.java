@@ -52,7 +52,7 @@ public class ButtonController {
 
 	public void solveP() { // 문제 푸는 메소드
 		long startTime = System.currentTimeMillis();
-		long endTime = startTime + TimeUnit.SECONDS.toMillis(10);
+		long endTime = startTime + TimeUnit.SECONDS.toMillis(12);
 		String questionList[] = { "빵", "양상추", "토마토", "마요네즈", "케첩", "불고기", "새우", "치킨", "치즈", "피클" };
 
 		while (System.currentTimeMillis() < endTime) {

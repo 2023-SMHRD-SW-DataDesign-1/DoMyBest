@@ -6,6 +6,7 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import Model.CustomerDAO;
+import Model.MemberDAO;
 import javazoom.jl.player.MP3Player;
 
 public class StageController {
@@ -14,9 +15,10 @@ public class StageController {
 	Scanner scan = new Scanner(System.in);
 	CustomerDAO cdao = new CustomerDAO();
 	MP3Player mp3 = new MP3Player();
+	MemberDAO mdao = new MemberDAO();
 
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
-
+		int score = 0;
 //		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
 //		mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bgm.mp3"); // 수환 개인컴퓨터용
 
@@ -36,13 +38,31 @@ public class StageController {
 			System.out.println();
 //			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
 //			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
-			solveP();
+			score = solveP();
 
+		}
+
+		while (true) {
+			System.out.println("랭킹 등록 할거?");
+			System.out.println("[1] 등록   [2] 등록안함");
+			int num = scan.nextInt();
+			if (num == 1) {
+				System.out.print("id 입력 >> ");
+				String id = scan.next();
+				mdao.rankingInsert(id, score);
+				break;
+			} else if (num == 2) {
+				System.out.println("등록안함 , 초기화면으로");
+				break;
+			} else {
+				System.out.println("잘못된 입력");
+			}
 		}
 
 	}
 
-	public void solveP() { // 문제 푸는 메소드
+	public int solveP() { // 문제 푸는 메소드
+		int Score = 0;
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(10); // 시간제한 5초
 		String questionList[] = { "빵", "양상추", "토마토", "마요네즈", "케첩", "불고기", "새우", "치킨", "치즈", "피클" };
@@ -122,6 +142,13 @@ public class StageController {
 					}
 					if (i == (recipeList.length - 1)) {
 						System.out.println("성공!" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+						if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
+							Score += 10;
+						} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
+							Score += 15;
+						} else if (cdao.cList().get(temp).getDifficult().equals("HARD")) {
+							Score += 20;
+						}
 						timeSleep(2000);
 					}
 				} else {
@@ -159,6 +186,7 @@ public class StageController {
 //			}
 //////////////////////////////////////////////////////////////////////////////////
 		}
+		return Score;
 
 	}
 
@@ -542,7 +570,7 @@ public class StageController {
 
 	public void countDown() {
 
-		System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		System.out.println("       ` ` ` ``` ` `      ");
 		System.out.println("      ``##########``      ");
 		System.out.println(" ```#################`    ");
@@ -564,10 +592,10 @@ public class StageController {
 		System.out.println("  `###################``  ");
 		System.out.println("    ``#############` `    ");
 		System.out.println("     ` ``   `   `` `  `   ");
-		System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		timeSleep(2000);
-		
-		System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		System.out.println("         `` ` `  `        ");
 		System.out.println("       ``########`        ");
 		System.out.println("     ################``   ");
@@ -589,10 +617,10 @@ public class StageController {
 		System.out.println("  `###################### ");
 		System.out.println("  `######################`");
 		System.out.println("`  `                   `` ");
-		System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		timeSleep(2000);
-		
-		System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		System.out.println("           `    ``        ");
 		System.out.println("            `####`        ");
 		System.out.println("         `#######         ");
@@ -614,10 +642,10 @@ public class StageController {
 		System.out.println("           ` ####         ");
 		System.out.println("          `` ####` `      ");
 		System.out.println("                  `       ");
-		System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		timeSleep(2000);
 	}
-	
+
 	public void timeSleep(int n) {
 		try {
 			Thread.sleep(n); // 1000 = 1초

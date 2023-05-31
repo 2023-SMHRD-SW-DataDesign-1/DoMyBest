@@ -13,6 +13,7 @@ public class MemberDAO {
 	Connection conn = null;
 	PreparedStatement psmt;
 	ResultSet rs = null;
+	int row = 0;
 
 	// 기능 메소드 생성
 	public void getConn() { // 연결
@@ -38,7 +39,6 @@ public class MemberDAO {
 	public void insertMember(MemberDTO dto) { // 회원가입
 		getConn();
 		String sql = "insert into MEMBER(id, pw, name) values(?,?,?)";
-		int row = 0;
 
 		try {
 			psmt = conn.prepareStatement(sql);
@@ -88,6 +88,35 @@ public class MemberDAO {
 		return name;
 	}
 
+	public void rankingInsert(String id, int score) {
+		getConn();
+		
+		try {
+			String sql = "update member set score = ? where id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, score);
+			psmt.setString(2, id);
+			
+			row = psmt.executeUpdate();
+			
+			if(row>0) {
+				System.out.println("랭킹 등록 완료");
+			}else {
+				System.out.println("랭킹 등록 실패");
+			}
+			
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			allClose();
+		}
+		
+		
+	}
+	
+	
 	public ArrayList<MemberDTO> rankingMember() { // 랭킹조회
 		getConn();
 		// MemberDTO dto;
