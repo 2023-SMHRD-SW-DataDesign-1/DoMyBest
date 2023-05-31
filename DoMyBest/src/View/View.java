@@ -70,10 +70,13 @@ public class View {
 							num = scan.nextInt();
 							if (num == 1) {
 								while (true) {
-									System.out.println("게임 모드 선택");
-									System.out.print("[1] 키보드모드 [2] 마우스모드 >> ");
+									System.out.println();
+									System.out.println("➳➳➳➳➳➳➳➳➳➳[  게임모드를 선택해주세요 ]➳➳➳➳➳➳➳➳➳➳➳➳➳➳");
+									System.out.println("             [1] 키보드모드 [2] 마우스모드 ");
+									System.out.print("            번호를 입력해주세요  >>>>>  ");
 									num = scan.nextInt();
 									if (num == 1) {
+										
 										System.out.println("게임을 시작합니다!");
 										StageController keygame = new StageController();
 										keygame.timeSleep(1000);
@@ -90,7 +93,7 @@ public class View {
 										System.out.println();
 										break;
 									} else {
-										System.out.println("잘못된 입력");
+										System.out.println("잘못된 입력입니다 •(  • _ •。)");
 									}
 								}
 								break;
@@ -98,7 +101,7 @@ public class View {
 							} else if (num == 2) {
 								break;
 							} else {
-								System.out.println("잘못된 입력" + "\n");
+								System.out.println("잘못된 입력입니다 •(  • _ •。)" + "\n");
 							}
 						}
 
@@ -106,7 +109,7 @@ public class View {
 						// 생각해보기~!
 						break;
 					} else if (name == null) {
-						System.out.println("아이디와 비밀번호를 잘못입력하셨습니다." + "\n");
+						System.out.println("아이디와 비밀번호를 잘못입력하셨습니다. •(  • _ •。)" + "\n");
 					}
 				}
 
@@ -143,7 +146,7 @@ public class View {
 				break;
 
 			} else {
-				System.out.println("숫자를 잘못 입력하셨습니다.");
+				System.out.println("숫자를 잘못 입력하셨습니다.•(  • _ •。)");
 			}
 		}
 	}

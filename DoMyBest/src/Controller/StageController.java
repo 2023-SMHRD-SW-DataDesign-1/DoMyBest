@@ -18,7 +18,7 @@ public class StageController {
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
 
 //		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
-		mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bgm.mp3"); // 수환 개인컴퓨터용
+//		mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bgm.mp3"); // 수환 개인컴퓨터용
 
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(60);
@@ -35,7 +35,7 @@ public class StageController {
 			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
 			System.out.println();
 //			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
-			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
+//			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
 			solveP();
 
 		}
@@ -112,7 +112,7 @@ public class StageController {
 					System.out
 							.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 //					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/chap.mp3");
-					mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/chap.mp3"); // 수환 개인컴퓨터용
+//					mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/chap.mp3"); // 수환 개인컴퓨터용
 					if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
 						easyLine(i); // 햄버거 쌓이는 시각효과 메서드
 					} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
