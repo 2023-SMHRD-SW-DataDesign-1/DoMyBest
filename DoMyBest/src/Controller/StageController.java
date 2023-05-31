@@ -16,7 +16,7 @@ public class StageController {
 	MP3Player mp3 = new MP3Player();
 
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
-		
+
 		mp3.play("Music/bgm.mp3");
 
 		long startTime = System.currentTimeMillis();
@@ -476,4 +476,11 @@ public class StageController {
 		}
 	}
 
+	public void timeSleep(int n) {
+		try {
+			Thread.sleep(n); // 1000 = 1초
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 }
