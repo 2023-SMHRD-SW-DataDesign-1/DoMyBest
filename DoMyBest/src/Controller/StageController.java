@@ -32,7 +32,7 @@ public class StageController {
 			System.out.println("　　　　　　　　　    " + count + "번째 손님 등장!ﾟ");
 			System.out.println("　　　　　　　　　　　　　　  ﾟ･｡･ﾟ");
 			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
-			System.out.println();
+			System.out.println("");
 			mp3.play("Music/bell.mp3");
 			solveP();
 
