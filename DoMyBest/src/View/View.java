@@ -7,11 +7,14 @@ import Controller.StageController;
 import Controller.ViewController;
 import Model.MemberDAO;
 import Model.MemberDTO;
+import javazoom.jl.player.MP3Player;
 
 public class View {
 
 	public static void main(String[] args) {
-
+		MP3Player mp3 = new MP3Player();
+				
+		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/mainbgm.mp3");
 		ViewController vcon = new ViewController();
 		StageController keygame = new StageController();
 		ButtonController mousegame = new ButtonController();
@@ -78,7 +81,8 @@ public class View {
 									System.out.print("            번호를 입력해주세요  >>>>>  ");
 									num = scan.nextInt();
 									if (num == 1) {
-
+																				
+										mp3.stop();
 										System.out.println("게임을 시작합니다!");
 										
 										keygame.timeSleep(1000);
@@ -89,6 +93,7 @@ public class View {
 										System.out.println();
 										break;
 									} else if (num == 2) {
+										mp3.stop();
 										System.out.println("게임을 시작합니다!");
 									
 										mousegame.timeSleep(1000);

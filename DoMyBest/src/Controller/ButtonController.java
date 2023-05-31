@@ -24,8 +24,8 @@ public class ButtonController {
 
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
 
-//		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
-		mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bgm.mp3"); // 수환 개인컴퓨터용
+		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
+//		mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bgm.mp3"); // 수환 개인컴퓨터용
 
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(60);
@@ -42,8 +42,8 @@ public class ButtonController {
 			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
 			System.out.println();
 			System.out.println("                   ♫ 띵 동 ♪  ");
-//			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
-			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
+			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
+//			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
 			solveP();
 
 		}
@@ -53,6 +53,7 @@ public class ButtonController {
 	public void solveP() { // 문제 푸는 메소드
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(12);
+		long endTime2 = startTime + TimeUnit.SECONDS.toMillis(10);
 		String questionList[] = { "빵", "양상추", "토마토", "마요네즈", "케첩", "불고기", "새우", "치킨", "치즈", "피클" };
 
 		while (System.currentTimeMillis() < endTime) {
@@ -102,8 +103,8 @@ public class ButtonController {
 							e.printStackTrace();
 						}
 					}
-//					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/chap.mp3");
-					mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/chap.mp3"); // 수환 개인컴퓨터용
+					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/chap.mp3");
+//					mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/chap.mp3"); // 수환 개인컴퓨터용
 				} else {
 					break;
 				}
@@ -129,7 +130,7 @@ public class ButtonController {
 					timeSleep(2000);
 					break;
 				}
-				if (System.currentTimeMillis() > endTime) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
+				if (System.currentTimeMillis() > endTime2) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
 					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 							+ "\n" + "\n" + "\n" + "\n" + "시간이 초과했어요 ŏ̥̥̥̥םŏ̥̥̥̥  손님이 집으로 돌아갔어요ŏ̥̥̥̥םŏ̥̥̥̥  " + "\n"
 							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
