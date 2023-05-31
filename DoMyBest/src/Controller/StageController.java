@@ -32,7 +32,7 @@ public class StageController {
 			System.out.println("　　　　　　　　　    " + count + "번째 손님 등장!ﾟ");
 			System.out.println("　　　　　　　　　　　　　　  ﾟ･｡･ﾟ");
 			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
-			System.out.println("");
+			System.out.println();
 			mp3.play("Music/bell.mp3");
 			solveP();
 
@@ -52,32 +52,44 @@ public class StageController {
 			int temp = ran.nextInt(cdao.cList().size()); // DB 손님리스트 랜덤뽑기
 			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
 			System.out.println("────────✧ " + cdao.cList().get(temp).getName() + " 님의 주문 ✧───────────────────────");
-			System.out.println("     " + "•──────[ 주문 목록 ] " + cdao.cList().get(temp).getHamburger() + "──────•");
+			System.out.println("         " + "•──────[  " + cdao.cList().get(temp).getHamburger() + "  ]──────•");
 			System.out.println();
-			System.out.println("         ╔═══ 자, 그럼 햄버거를 한 번 만들어 볼까요?═══╗");
+			System.out.println("       ╔═════ 현재 JAVA BURGER 재료 목록 ═══╗");
 //////////////////////////////////답안 분리 로직//////////////////////////////////////////////////////
 			for (int i = 0; i < recipeList.length; i++) {
 				//
-				System.out.println(" ✎✎✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏현재 재료 목록﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏");
+//				System.out.println(" ✎✎✎﹏﹏﹏﹏재료를 활용해 햄버거를 만들어 봐요!﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏");
 				System.out.println();
 				for (int l = 0; l < questionList.length; l++) {
-					System.out.print("[" + (l) + "]" + questionList[l] + " ");
+					if (l == 3) {
+						System.out.print("[" + (l) + "]" + questionList[l] + " ");
+					} else if (l == 8) {
+						System.out.print("[" + (l) + "]" + questionList[l] + "\t" + "  ");
+					} else {
+						System.out.print("[" + (l) + "]" + questionList[l] + "\t");
+						if (l == 4) {
+							System.out.println();
+						}
+
+					}
+
 				}
 				System.out.println();
 				//
 				//
 				System.out.println();
-				System.out.println("☆⁺˚*♡⁺˚*☆ ☽⋅─────•[ 햄버거 제조 순서 ]≫≫ ");
-				System.out.println("----------------------------------");
+				System.out.println("☆⁺˚*♡⁺˚*☆ ☽⋅─────•[ 햄버거 제조 순서 ]────☆⁺˚*♡⁺˚*☆─ ");
+				System.out.println("---------------------------------------------------");
+				System.out.print("               ");
 				for (int j = 0; j < recipeList.length; j++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
 					for (int k = 0; k < questionList.length; k++) {
 						if (recipeList[j] == (char) (k + '0')) {
-							System.out.print(questionList[k] + " ");
+							System.out.print(questionList[k] + " ☞ ");
 						}
 					}
 				}
 				System.out.println();
-				System.out.println("----------------------------------");
+				System.out.println("--------------------------------------------------");
 				System.out.println();
 				//
 				System.out.println();
