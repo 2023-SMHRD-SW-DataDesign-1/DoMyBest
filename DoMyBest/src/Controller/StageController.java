@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 import Model.CustomerDAO;
 import javazoom.jl.player.MP3Player;
 
-public class StageController{
+public class StageController {
 
 	Random ran = new Random();
 	Scanner scan = new Scanner(System.in);
@@ -29,10 +29,10 @@ public class StageController{
 			System.out.println("　　　　　 （｡･ω･｡)つ━☆☆* 띵 ~ 동 ♪ ");
 			System.out.println("　　　　　　⊂　　 ノ 　　 　☆☆");
 			System.out.println("　　　　　　　し-Ｊ　　   °。 * 。");
-			System.out.println("　　　　　　　　　    "+count+"번째 손님 등장!ﾟ");
+			System.out.println("　　　　　　　　　    " + count + "번째 손님 등장!ﾟ");
 			System.out.println("　　　　　　　　　　　　　　  ﾟ･｡･ﾟ");
-            System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
-            System.out.println();
+			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
+			System.out.println();
 			mp3.play("Music/bell.mp3");
 			solveP();
 
@@ -51,9 +51,10 @@ public class StageController{
 
 			int temp = ran.nextInt(cdao.cList().size()); // DB 손님리스트 랜덤뽑기
 			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
-			System.out.println("────────✧ "+cdao.cList().get(temp).getName()+ " 님의 주문 ✧───────────────────────");
-			System.out.println("     "+"•──────[ 주문 목록 ] "+cdao.cList().get(temp).getHamburger()+"──────•");
+			System.out.println("────────✧ " + cdao.cList().get(temp).getName() + " 님의 주문 ✧───────────────────────");
+			System.out.println("     " + "•──────[ 주문 목록 ] " + cdao.cList().get(temp).getHamburger() + "──────•");
 			System.out.println();
+			System.out.println("         ╔═══ 자, 그럼 햄버거를 한 번 만들어 볼까요?═══╗");
 //////////////////////////////////답안 분리 로직//////////////////////////////////////////////////////
 			for (int i = 0; i < recipeList.length; i++) {
 				//
@@ -66,10 +67,8 @@ public class StageController{
 				//
 				//
 				System.out.println();
-				System.out.println("         ╔═══ 자, 그럼 햄버거를 한 번 만들어 볼까요?═══╗");
-//				System.out.println("☆⁺˚*♡⁺˚*☆ ☽⋅─────•╔═══ 제조 순서에 따라 재료 번호를 입력해주세요 ═══╗ ");
-				System.out.print("☆⁺˚*♡⁺˚*☆ ☽⋅─────•[ 햄버거 제조 순서 ]≫≫ ");
-
+				System.out.println("☆⁺˚*♡⁺˚*☆ ☽⋅─────•[ 햄버거 제조 순서 ]≫≫ ");
+				System.out.println("----------------------------------");
 				for (int j = 0; j < recipeList.length; j++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
 					for (int k = 0; k < questionList.length; k++) {
 						if (recipeList[j] == (char) (k + '0')) {
@@ -78,13 +77,14 @@ public class StageController{
 					}
 				}
 				System.out.println();
+				System.out.println("----------------------------------");
+				System.out.println();
 				//
 				System.out.println();
 				System.out.print("         재료 번호를 순서대로 하나씩만 입력 후 엔터를 눌러주세요 >>");
 				answerList.add(scan.nextInt());
 				if ((char) (answerList.get(i) + '0') == recipeList[i]) {
-					System.out.println("          ʚ(*´꒳`*)ɞ ~♡ 정답! 다음 재료번호 입력해주세요!"
-							+ "");
+					System.out.println("          ʚ(*´꒳`*)ɞ ~♡ 정답! 다음 재료번호 입력해주세요!" + "");
 					mp3.play("Music/chap.mp3");
 					if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
 						easyLine(i); // 햄버거 쌓이는 시각효과 메서드
