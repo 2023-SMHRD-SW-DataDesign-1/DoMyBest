@@ -37,7 +37,7 @@ public class StageController {
             System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬·");
             System.out.println();
 
-			System.out.println("    "+count + "번 손님이 자바 버거에 들어왔습니다.");
+			System.out.println("            "+count + "번 손님이 자바 버거에 들어왔습니다.");
 			mp3.play("Music/bell.mp3");
 			solveP();
 
@@ -56,19 +56,23 @@ public class StageController {
 
 			int temp = ran.nextInt(cdao.cList().size()); // DB 손님리스트 랜덤뽑기
 			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
-			System.out.println("   "+"•────[ 주문 목록 ] "+cdao.cList().get(temp).getHamburger()+"────•");
-			System.out.println();
+			System.out.println("        "+"•────[ 주문 목록 ] "+cdao.cList().get(temp).getHamburger()+"────•");
 			System.out.println();
 //////////////////////////////////답안 분리 로직//////////////////////////////////////////////////////
 			for (int i = 0; i < recipeList.length; i++) {
 				//
+				System.out.println(" ⭑:༅｡.｡༅::✼✿ ──────현재 재료 목록────── ✿✼:*ﾟ:༅｡.｡༅:*･ﾟﾟ･⭑");
+				System.out.println();
 				for (int l = 0; l < questionList.length; l++) {
 					System.out.print("[" + (l) + "]" + questionList[l] + " ");
 				}
 				System.out.println();
 				//
 				//
-				System.out.print("레시피 : ");
+				System.out.println();
+				System.out.println("         ╔═══ 자, 그럼 햄버거를 한 번 만들어 볼까요?═══╗");
+//				System.out.println("☆⁺˚*♡⁺˚*☆ ☽⋅─────•╔═══ 제조 순서에 따라 재료 번호를 입력해주세요 ═══╗ ");
+				System.out.print("☆⁺˚*♡⁺˚*☆ ☽⋅─────•[ 햄버거 제조 순서 ]≫≫ ");
 
 				for (int j = 0; j < recipeList.length; j++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
 					for (int k = 0; k < questionList.length; k++) {
@@ -79,9 +83,12 @@ public class StageController {
 				}
 				System.out.println();
 				//
+				System.out.println();
+				System.out.print("         재료 번호를 순서대로 하나씩만 입력 후 엔터를 눌러주세요 >>");
 				answerList.add(scan.nextInt());
 				if ((char) (answerList.get(i) + '0') == recipeList[i]) {
-					System.out.println("정답");
+					System.out.println("          ʚ(*´꒳`*)ɞ ~♡ 정답! 다음 재료번호 입력해주세요!"
+							+ "");
 					mp3.play("Music/chap.mp3");
 					if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
 						easyLine(i); // 햄버거 쌓이는 시각효과 메서드
@@ -91,11 +98,13 @@ public class StageController {
 						hardLine(i);
 					}
 				} else {
-					System.out.println("오답");
+					System.out.println("        ŏ̥̥̥̥םŏ̥̥̥̥ 잘못된 재료번호입니다. 손님이 화가나서 돌아갔어요 ŏ̥̥̥̥םŏ̥̥̥̥ ");
+					System.out.println();
+					System.out.println();
 					break;
 				}
 				if (System.currentTimeMillis() > endTime) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
-					System.out.println("타임아웃");
+					System.out.println("시간이 초과했어요 ŏ̥̥̥̥םŏ̥̥̥̥  손님이 집으로 돌아갔어요ŏ̥̥̥̥םŏ̥̥̥̥  ");
 					break;
 				}
 			}
