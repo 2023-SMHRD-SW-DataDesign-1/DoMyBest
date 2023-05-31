@@ -12,7 +12,7 @@ public class Test_main {
 		test.stageStart();
 		
 //		MP3Player mp3 = new MP3Player();
-		
+//		
 //		mp3.play("Music/bgm.mp3");
 //		mp3.play("Music/chap.mp3");
 //		System.out.println("123");

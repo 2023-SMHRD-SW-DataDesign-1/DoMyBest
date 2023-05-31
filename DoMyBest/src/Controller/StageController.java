@@ -6,15 +6,18 @@ import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
 import Model.CustomerDAO;
+import javazoom.jl.player.MP3Player;
 
 public class StageController {
 
 	Random ran = new Random();
 	Scanner scan = new Scanner(System.in);
-
 	CustomerDAO cdao = new CustomerDAO();
+	MP3Player mp3 = new MP3Player();
 
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
+		
+		mp3.play("Music/bgm.mp3");
 
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(60);
@@ -22,6 +25,7 @@ public class StageController {
 		while (System.currentTimeMillis() < endTime) {
 			count++;
 			System.out.println(count + " 번 손님");
+			mp3.play("Music/bell.mp3");
 			solveP();
 
 		}
@@ -65,6 +69,7 @@ public class StageController {
 				answerList.add(scan.nextInt());
 				if ((char) (answerList.get(i) + '0') == recipeList[i]) {
 					System.out.println("정답");
+					mp3.play("Music/chap.mp3");
 					if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
 						easyLine(i); // 햄버거 쌓이는 시각효과 메서드
 					} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
