@@ -65,12 +65,16 @@ public class View {
 				String pw = scan.next();
 				System.out.print("원하는 NAME를 입력하세요 >> ");
 				String name = scan.next();
-				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-						+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+//				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+//						+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"+ "\n" + "\n" + "\n" + "\n");
 
 				MemberDAO insertCon = new MemberDAO();
 
 				insertCon.insertMember(new MemberDTO(id, pw, name));
+				keygame.timeSleep(2000);
+				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+						+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+						+ "\n" + "\n" + "\n" + "\n" + "\n");
 
 				// 로그인
 			} else if (num == 2) {
@@ -96,17 +100,17 @@ public class View {
 						System.out.println("══════════════════   " + name + "님 안녕하세요!　══════════════════ ");
 						while (true) {
 							System.out.println("➳➳➳➳➳➳➳➳➳➳➳[  게임을 시작하시겠습니까?  ]➳➳➳➳➳➳➳➳➳➳➳");
-							System.out.println("                   [1] 예  [2] 아니오");
+							System.out.println("                  [1] 예  [2] 아니오");
 							System.out.println();
-							System.out.print("            번호를 입력해주세요  >>>>>  ");
+							System.out.print("                 번호를 입력해주세요  >>>>>  ");
 							num = scan.nextInt();
-							System.out.println("\n" + "\n" );
+							System.out.println("\n" + "\n");
 							if (num == 1) {
 								while (true) {
 									System.out.println();
-									System.out.println("➳➳➳➳➳➳➳➳➳➳[  게임모드를 선택해주세요 ]➳➳➳➳➳➳➳➳➳➳");
-									System.out.println("         [1] 키보드모드 [2] 마우스모드 ");
-									System.out.print("            번호를 입력해주세요  >>>>>  ");
+									System.out.println("➳➳➳➳➳➳➳➳➳➳➳➳[  게임모드를 선택해주세요  ]➳➳➳➳➳➳➳➳➳➳➳➳");
+									System.out.println("               [1] 키보드모드  [2] 마우스모드 ");
+									System.out.print("                 번호를 입력해주세요  >>>>>  ");
 									num = scan.nextInt();
 									if (num == 1) {
 
@@ -114,33 +118,51 @@ public class View {
 										System.out.println("게임을 시작합니다!");
 										keygame.timeSleep(1000);
 										System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-												+ "\n" + "\n" + "\n" + "\n" + "\n");
-										System.out.println("        .............Behind Story............");
-										System.out.println("         햄버거가 너무 좋아서 세끼 햄버거만 먹던 나는..");
-										System.out.println("        열심히 돈을 모아서 JAVA HAMBURGER를 차렸다.");
-										System.out.println("           그리고 드디어 오늘은 가게를 오픈하는 날!");
-										System.out.println(" 나의 손맛이 들어간 맛있는 버거의 맛을 사람들이 알아주길 바라며...");
-										System.out.println("            설레는 마음으로 가게 운영을 시작해보자!");
+												+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+												+ "\n");
+										System.out.println("                     .................Behind Story.................");
+										System.out.println("                           햄버거가 너무 좋아서 세끼 햄버거만 먹던 나는..");
+										System.out.println("                          열심히 돈을 모아서 JAVA HAMBURGER를 차렸다.");
+										System.out.println("                             그리고 드디어 오늘은 가게를 오픈하는 날!");
+										System.out.println("                   나의 손맛이 들어간 맛있는 버거의 맛을 사람들이 알아주길 바라며...");
+										System.out.println("                              설레는 마음으로 가게 운영을 시작해보자!");
 										System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 												+ "\n" + "\n" + "\n" + "\n" + "\n");
 
-										keygame.timeSleep(3000);
+										keygame.timeSleep(5000);
 										keygame.countDown();
 										System.out.println("\n" + "\n" + "\n" + "\n");
 
 										keygame.stageStart();
 										System.out.println();
 										System.out.println();
+										mp3.stop();
 										break;
+
 									} else if (num == 2) {
 										mp3.stop();
 										System.out.println("게임을 시작합니다!");
+										keygame.timeSleep(1000);
+										System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+												+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+												+ "\n");
+										System.out.println("                     .................Behind Story.................");
+										System.out.println("                           햄버거가 너무 좋아서 세끼 햄버거만 먹던 나는..");
+										System.out.println("                          열심히 돈을 모아서 JAVA HAMBURGER를 차렸다.");
+										System.out.println("                             그리고 드디어 오늘은 가게를 오픈하는 날!");
+										System.out.println("                   나의 손맛이 들어간 맛있는 버거의 맛을 사람들이 알아주길 바라며...");
+										System.out.println("                              설레는 마음으로 가게 운영을 시작해보자!");
+										System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+												+ "\n" + "\n" + "\n" + "\n" + "\n");
 
-										mousegame.timeSleep(1000);
+										keygame.timeSleep(5000);
 										keygame.countDown();
+										System.out.println("\n" + "\n" + "\n" + "\n");
+
 										mousegame.stageStart();
 										System.out.println();
 										System.out.println();
+										mp3.stop();
 										break;
 									} else {
 										System.out.println("잘못된 입력입니다 •(  • _ •。)");
@@ -164,25 +186,26 @@ public class View {
 				}
 
 			} else if (num == 3) {
-				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
-				System.out.println("╭➳➳➳➳➳♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡┈┈┈┈┈┈╮");
-				System.out.println("      이 구역의 랭킹탐정이 랭킹을 조회합니다.");
-				System.out.println("    랭킹탐정의 선글라스가 반짝이며 랭킹을 조회합니다.");
-				System.out.println("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄");
-				System.out.println("█░░░░░░░░▀█▄▀▄▀██████░▀█▄▀▄▀██████░");
-				System.out.println("░░░░░░░░░░░▀█▄█▄███▀░░░ ▀██▄█▄███▀░");
-				System.out.println("\n"+"\n"+"\n");
-				
+				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+				System.out.println("         ╭➳➳➳➳➳♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡┈┈┈┈┈┈╮");
+				System.out.println("               이 구역의 랭킹탐정이 랭킹을 조회합니다.");
+				System.out.println("             랭킹탐정의 선글라스가 반짝이며 랭킹을 조회합니다.");
+				System.out.println("             ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄");
+				System.out.println("             █░░░░░░░░▀█▄▀▄▀██████░▀█▄▀▄▀██████░");
+				System.out.println("             ░░░░░░░░░░░▀█▄█▄███▀░░░ ▀██▄█▄███▀░");
+				System.out.println("\n" + "\n" + "\n");
+
 				MemberDAO rankingCon = new MemberDAO();
 				for (int i = 0; i < rankingCon.rankingMember().size(); i++) {
-					System.out.print((i + 1) + "등 아이디는 ➳" + rankingCon.rankingMember().get(i).getId() + " ");
-					System.out.print("이름은 ➳ " + rankingCon.rankingMember().get(i).getName() + " ");
-					System.out.print("점수는 ➳" + rankingCon.rankingMember().get(i).getScore() + " ");
+					System.out.print("       " +(i + 1) + "등 아이디는 ➳" + rankingCon.rankingMember().get(i).getId() + " ");
+					System.out.print("       " +"이름은 ➳ " + rankingCon.rankingMember().get(i).getName() + " ");
+					System.out.print("       " +"점수는 ➳" + rankingCon.rankingMember().get(i).getScore() + " ");
 					System.out.println();
 				}
-				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 				keygame.timeSleep(4000);
-				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+						+ "\n" + "\n");
 
 			} else if (num == 4) {
 				System.out.println("           ⌒__⌒");
@@ -200,8 +223,9 @@ public class View {
 				MemberDAO deleteCon = new MemberDAO();
 				deleteCon.memberDelete(id);
 				keygame.timeSleep(2000);
-				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
-				
+				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+						+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"+ "\n" + "\n" + "\n" + "\n" + "\n");
+
 			} else if (num == 5) {
 				System.out.println(" 　　 　　 　　∧ ∧");
 				System.out.println(" 　　 　　　 (´･ω･)");

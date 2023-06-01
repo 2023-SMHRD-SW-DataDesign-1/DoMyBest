@@ -20,10 +20,9 @@ public class StageController {
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
 		int score = 0;
 		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
-//		mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bgm.mp3"); // 수환 개인컴퓨터용
 
 		long startTime = System.currentTimeMillis();
-		long endTime = startTime + TimeUnit.SECONDS.toMillis(60);
+		long endTime = startTime + TimeUnit.SECONDS.toMillis(20);
 		int count = 0;
 		while (System.currentTimeMillis() < endTime) {
 			count++;
@@ -37,26 +36,29 @@ public class StageController {
 			System.out.println("¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸♬·¯·♩¸¸♪·¯·♫¸¸¸¸¸♬··¯·♩¸¸♪·¯·♫¸¸¸¸¸♬");
 			System.out.println();
 			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
-//			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
 			score = solveP();
 
 		}
-		mp3.stop();
+
 		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/clear.mp3");
-		
-		System.out.println("              토닥토닥");
-		System.out.println("             (\\__/)");
-		System.out.println("            （｀•.• )づ__/)");
-		System.out.println("            （つ　 /( •.• )");
-		System.out.println("              しーＪ (nnノ)");
-		System.out.println(" 오늘도 열심히 버거를 만드느라 고생했어요!");
+
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+				+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+		System.out.println("                                 토닥토닥");
+		System.out.println("                                (\\__/)");
+		System.out.println("                               （｀•.• )づ__/)");
+		System.out.println("                               （つ　 /( •.• )");
+		System.out.println("                                 しーＪ (nnノ)");
+		System.out.println("                    오늘도 열심히 버거를 만드느라 고생했어요!");
 		System.out.println();
-		
+		System.out.println(
+				"\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+
 		timeSleep(3000);
-		
-		
-		
+
 		while (true) {
+			System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+					+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 			System.out.println(". ʕ⑅˶>⤙<˶ʔ");
 			System.out.println("ପ(  づ  づ )ଓ(최고!)");
 			System.out.println();
@@ -76,11 +78,18 @@ public class StageController {
 				System.out.println("(❛⌓❛ ) 잘못된 입력입니다. 다시 입력해주세요 ");
 			}
 		}
+		timeSleep(2000);
+
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+				+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+		if (mp3.isPlaying()) {
+			mp3.stop(); // plyaing이 true면 재생중인 곡 정지
+		}
 
 	}
 
 	public int solveP() { // 문제 푸는 메소드
-		
+
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(15);
 		long endTime2 = startTime + TimeUnit.SECONDS.toMillis(10);// 시간제한 5초
@@ -171,12 +180,10 @@ public class StageController {
 							money += 20;
 						}
 						mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/success.mp3");
-						System.out.println("                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! "
-								+ "\n" + "\n" + "                        냠냠 너무 맛있을 것 같아요~" + "\n" + 
-								"\n" + "                               매출 : " + money
-								+ "$" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-								+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
-
+						System.out.println("\n"+"\n"+"\n"+"                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n" + "\n"
+								+ "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "\n"
+								+ "                               매출 : " + money + "$" + "\n" + "\n" + "\n" + "\n" + "\n"
+								+ "\n" + "\n" + "\n" );
 						timeSleep(2000);
 					}
 				} else {
@@ -607,77 +614,77 @@ public class StageController {
 	public void countDown() {
 
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
-		System.out.println("       ` ` ` ``` ` `      ");
-		System.out.println("      ``##########``      ");
-		System.out.println(" ```#################`    ");
-		System.out.println("  `#####`        #####``` ");
-		System.out.println("  ` ``   `   ` `  `####` `");
-		System.out.println("                `  `####  ");
-		System.out.println("                `  `#### `");
-		System.out.println("                  `####` `");
-		System.out.println("       `    ``  `#####`   ");
-		System.out.println("         ###########``    ");
-		System.out.println("         ###########`     ");
-		System.out.println("             `  `#####` ` ");
-		System.out.println("             ```   `####  ");
-		System.out.println("                    ##### ");
-		System.out.println("                    `####`");
-		System.out.println("                    `#### ");
-		System.out.println("    ```          `  ##### ");
-		System.out.println("` ####`` `       `######  ");
-		System.out.println("  `###################``  ");
-		System.out.println("    ``#############` `    ");
-		System.out.println("     ` ``   `   `` `  `   ");
+		System.out.println("                                ` ` ` ``` ` `      ");
+		System.out.println("                               ``##########``      ");
+		System.out.println("                          ```#################`    ");
+		System.out.println("                           `#####`        #####``` ");
+		System.out.println("                           ` ``   `   ` `  `####` `");
+		System.out.println("                                         `  `####  ");
+		System.out.println("                                         `  `#### `");
+		System.out.println("                                           `####` `");
+		System.out.println("                                `    ``  `#####`   ");
+		System.out.println("                                  ###########``    ");
+		System.out.println("                                  ###########`     ");
+		System.out.println("                                      `  `#####` ` ");
+		System.out.println("                                      ```   `####  ");
+		System.out.println("                                             ##### ");
+		System.out.println("                                             `####`");
+		System.out.println("                                             `#### ");
+		System.out.println("                             ```          `  ##### ");
+		System.out.println("                         ` ####`` `       `######  ");
+		System.out.println("                           `###################``  ");
+		System.out.println("                             ``#############` `    ");
+		System.out.println("                              ` ``   `   `` `  `   ");
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		timeSleep(1000);
 
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
-		System.out.println("         `` ` `  `        ");
-		System.out.println("       ``########`        ");
-		System.out.println("     ################``   ");
-		System.out.println("  `######`     ``######   ");
-		System.out.println("  ##### `  ` ```   #####``");
-		System.out.println(" ` `##             `####  ");
-		System.out.println("                `   ####``");
-		System.out.println("                    ####` ");
-		System.out.println("                 ` ##### `");
-		System.out.println("                ``#####` `");
-		System.out.println("                `#####`   ");
-		System.out.println("           `  `#####` `   ");
-		System.out.println("             #####````    ");
-		System.out.println("           ######         ");
-		System.out.println("    `` ```#####`          ");
-		System.out.println("     ` `##### `           ");
-		System.out.println("  ` ``#####``             ");
-		System.out.println("   `#####  ``             ");
-		System.out.println("  `###################### ");
-		System.out.println("  `######################`");
-		System.out.println("`  `                   `` ");
+		System.out.println("                                  `` ` `  `        ");
+		System.out.println("                                ``########`        ");
+		System.out.println("                              ################``   ");
+		System.out.println("                           `######`     ``######   ");
+		System.out.println("                           ##### `  ` ```   #####``");
+		System.out.println("                          ` `##             `####  ");
+		System.out.println("                                         `   ####``");
+		System.out.println("                                             ####` ");
+		System.out.println("                                          ` ##### `");
+		System.out.println("                                         ``#####` `");
+		System.out.println("                                         `#####`   ");
+		System.out.println("                                    `  `#####` `   ");
+		System.out.println("                                      #####````    ");
+		System.out.println("                                    ######         ");
+		System.out.println("                             `` ```#####`          ");
+		System.out.println("                              ` `##### `           ");
+		System.out.println("                           ` ``#####``             ");
+		System.out.println("                            `#####  ``             ");
+		System.out.println("                           `###################### ");
+		System.out.println("                           `######################`");
+		System.out.println("                         `  `                   `` ");
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		timeSleep(1000);
 
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
-		System.out.println("           `    ``        ");
-		System.out.println("            `####`        ");
-		System.out.println("         `#######         ");
-		System.out.println("    ` `##########         ");
-		System.out.println("     #####`  ####         ");
-		System.out.println("     `#``` ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("           ` ####         ");
-		System.out.println("          `` ####` `      ");
-		System.out.println("                  `       ");
+		System.out.println("                                    `    ``        ");
+		System.out.println("                                     `####`        ");
+		System.out.println("                                  `#######         ");
+		System.out.println("                             ` `##########         ");
+		System.out.println("                              #####`  ####         ");
+		System.out.println("                              `#``` ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                    ` ####         ");
+		System.out.println("                                   `` ####` `      ");
+		System.out.println("                                           `       ");
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		timeSleep(1000);
 	}

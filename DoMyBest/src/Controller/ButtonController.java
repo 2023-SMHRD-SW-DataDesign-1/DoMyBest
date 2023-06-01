@@ -26,10 +26,9 @@ public class ButtonController {
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
 		int score = 0;
 		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
-//		mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bgm.mp3"); // 수환 개인컴퓨터용
 
 		long startTime = System.currentTimeMillis();
-		long endTime = startTime + TimeUnit.SECONDS.toMillis(60);
+		long endTime = startTime + TimeUnit.SECONDS.toMillis(20);
 		int count = 0;
 		while (System.currentTimeMillis() < endTime) {
 			count++;
@@ -44,13 +43,28 @@ public class ButtonController {
 			System.out.println();
 			System.out.println("                   ♫ 띵 동 ♪  ");
 			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
-//			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
 			score = solveP();
 
 		}
 		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/clear.mp3");
 
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+				+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+		System.out.println("                                 토닥토닥");
+		System.out.println("                                (\\__/)");
+		System.out.println("                               （｀•.• )づ__/)");
+		System.out.println("                               （つ　 /( •.• )");
+		System.out.println("                                 しーＪ (nnノ)");
+		System.out.println("                    오늘도 열심히 버거를 만드느라 고생했어요!");
+		System.out.println();
+		System.out.println(
+				"\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+
+		timeSleep(3000);
+
 		while (true) {
+			System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+					+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 			System.out.println(". ʕ⑅˶>⤙<˶ʔ");
 			System.out.println("ପ(  づ  づ )ଓ(최고!)");
 			System.out.println();
@@ -69,6 +83,14 @@ public class ButtonController {
 			} else {
 				System.out.println("(❛⌓❛ ) 잘못된 입력입니다. 다시 입력해주세요 ");
 			}
+		}
+
+		timeSleep(2000);
+
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+				+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+		if (mp3.isPlaying()) {
+			mp3.stop(); // plyaing이 true면 재생중인 곡 정지
 		}
 
 	}
@@ -100,13 +122,13 @@ public class ButtonController {
 				}
 			}
 
-			System.out.println();
-			System.out.println();
-			System.out.println("☆⁺˚*♡⁺˚*☆ ☽⋅─────•[ 햄버거 제조 순서 ]────☆⁺˚*♡⁺˚*☆─ ");
-			System.out.println("--------------------------------------------------------------");
-			System.out.print("      ");
 			long remainingTime = endTime - System.currentTimeMillis();
 			for (int j = 0; j < recipeList.length; j++) {
+				System.out.println();
+				System.out.println();
+				System.out.println("☆⁺˚*♡⁺˚*☆ ☽⋅─────•[ 햄버거 제조 순서 ]────☆⁺˚*♡⁺˚*☆─ ");
+				System.out.println("--------------------------------------------------------------");
+				System.out.print("      ");
 				for (int k = 0; k < recipeList.length; k++) { // question 배열과 answerL배열 값을 비교해 레시피 작성
 					for (int l = 0; l < questionList.length; l++) {
 						if (recipeList[k] == (char) (l + '0')) {
@@ -144,7 +166,7 @@ public class ButtonController {
 				if (recipeList[j] == bt.answerGet()) {
 					System.out.println("          ʚ(*´꒳`*)ɞ ~♡ 정답! 다음 재료번호 입력해주세요!" + "");
 					System.out
-							.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+							.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"+ "\n" + "\n" + "\n" + "\n" + "\n"+ "\n" + "\n"+ "\n" + "\n" + "\n" + "\n" + "\n");
 					if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
 						scon.easyLine(j); // 햄버거 쌓이는 시각효과 메서드
 					} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
@@ -175,10 +197,10 @@ public class ButtonController {
 						money += 20;
 					}
 					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/success.mp3");
-					System.out.println("                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n" + "\n"
+					System.out.println("\n"+"\n"+"\n"+"                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n" + "\n"
 							+ "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "\n"
 							+ "                               매출 : " + money + "$" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+							+ "\n" + "\n" + "\n" );
 					timeSleep(2000);
 				}
 
