@@ -20,9 +20,10 @@ public class StageController {
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
 		int score = 0;
 		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
+		
 
 		long startTime = System.currentTimeMillis();
-		long endTime = startTime + TimeUnit.SECONDS.toMillis(20);
+		long endTime = startTime + TimeUnit.SECONDS.toMillis(30);
 		int count = 0;
 		while (System.currentTimeMillis() < endTime) {
 			count++;
@@ -101,10 +102,12 @@ public class StageController {
 
 			int temp = ran.nextInt(cdao.cList().size()); // DB 손님리스트 랜덤뽑기
 			char recipeList[] = cdao.cList().get(temp).getRecipe().toCharArray(); // DB에 있는 recipe컬럼 값을 문자형 배열로 생성
-			System.out.println("────────✧ " + cdao.cList().get(temp).getName() + " 님의 주문 ✧───────────────────────");
-			System.out.println("         " + "•──────[  " + cdao.cList().get(temp).getHamburger() + "  ]──────•");
+			System.out.println(
+					"───────────────────────✧ " + cdao.cList().get(temp).getName() + " 님의 주문 ✧───────────────────────");
+			System.out.println(
+					"                      " + "•──────[  " + cdao.cList().get(temp).getHamburger() + "  ]──────•");
 			System.out.println();
-			System.out.println("       ╔═════ 현재 JAVA BURGER 재료 목록 ═════╗");
+			System.out.println("                        ╔═════ 현재 JAVA BURGER 재료 목록 ═════╗");
 //////////////////////////////////답안 분리 로직//////////////////////////////////////////////////////
 			for (int i = 0; i < recipeList.length; i++) {
 				//
@@ -113,7 +116,9 @@ public class StageController {
 
 				for (int l = 0; l < questionList.length; l++) {
 					if (l == 5) {
-						System.out.print("[" + (l) + "]" + questionList[l] + "  ");
+						System.out.print("        [" + (l) + "]" + questionList[l] + "  ");
+					} else if (l == 0) {
+						System.out.print("        [" + (l) + "]" + questionList[l] + "\t" + "  ");
 					} else {
 						System.out.print("[" + (l) + "]" + questionList[l] + "\t" + "  ");
 					}
@@ -180,10 +185,10 @@ public class StageController {
 							money += 20;
 						}
 						mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/success.mp3");
-						System.out.println("\n"+"\n"+"\n"+"                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n" + "\n"
-								+ "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "\n"
-								+ "                               매출 : " + money + "$" + "\n" + "\n" + "\n" + "\n" + "\n"
-								+ "\n" + "\n" + "\n" );
+						System.out.println("\n" + "\n" + "\n" + "                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! "
+								+ "\n" + "\n" + "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "\n"
+								+ "                               매출 : " + money + "$" + "\n" + "\n" + "\n" + "\n"
+								+ "\n" + "\n" + "\n" + "\n");
 						timeSleep(2000);
 					}
 				} else {
@@ -274,8 +279,8 @@ public class StageController {
 			System.out.println("⠈⠓⠶⣶⣾⣿⣿⣿⣧⡀⠀⠈⠒⢤⣀⣀⡀⠀⠀⣀⣀⡠⠚⠁⠀⢀⡼⠃⠀⠀               ⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀⠀⠀⠀");
 			System.out.println("⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣷⣤⣤⣤⣤⣭⣭⣭⣭⣭⣥⣤⣤⣤⣴⣟⠁⠀                        ⠈⠙⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠛⠋⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 		} else if (n == 4) {
-			System.out.println("                                             ⠀⠀⠀⠀⠀⠀⠀    ⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀⠀");
-			System.out.println("                                                    ⢀⣠⣤⣶⣶⣶⣾⣿⣽⣿⣷⣿⣷⣢⠽⢷⣶⣤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
+			System.out.println("                                             ⠀⠀⠀⠀⠀ ⠀⠀    ⠀⠀⠀⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀  ⠀⠀⠀⠀");
+			System.out.println("                                                     ⢀⣠⣤⣶⣶⣶⣾⣿⣽⣿⣷⣿⣷⣢⠽⢷⣶⣤⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀");
 			System.out.println("⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣴⣶⣶⣶⣶⣶⠶⣶⣤⣤⣀⠀⠀⠀⠀⠀⠀               ⠀⠀⠀ ⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡗⢾⣿⣧⣷⢵⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀");
 			System.out.println("⠀⠀⠀⠀⠀⠀⠀⢀⣤⣾⣿⣿⣿⠁⠀⢀⠈⢿⢀⣀⠀⠹⣿⣿⣿⣦⣄⠀⠀⠀              ⠀⠀⠀  ⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣾⡆⠀⠀⠀⠀⠀⠀⠀");
 			System.out.println("⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⠿⠀⠀⣟⡇⢘⣾⣽⠀⠀⡏⠉⠙⢛⣿⣷⡖⠀              ⠀⠀   ⠀⠀⣻⢿⣿⣿⣿⣿⣿⣭⣽⣿⣿⣦⣤⣴⣾⣭⣭⣭⣉⠙⡛⠛⠻⠿⠿⡗⠀⠀⠀⠀⠀⠀⠀");
@@ -613,6 +618,7 @@ public class StageController {
 
 	public void countDown() {
 
+		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/three.mp3");
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		System.out.println("                                ` ` ` ``` ` `      ");
 		System.out.println("                               ``##########``      ");
@@ -636,7 +642,9 @@ public class StageController {
 		System.out.println("                             ``#############` `    ");
 		System.out.println("                              ` ``   `   `` `  `   ");
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
-		timeSleep(1000);
+		timeSleep(1500);
+		
+		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/two.mp3");
 
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		System.out.println("                                  `` ` `  `        ");
@@ -661,7 +669,9 @@ public class StageController {
 		System.out.println("                           `######################`");
 		System.out.println("                         `  `                   `` ");
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
-		timeSleep(1000);
+		timeSleep(1500);
+		
+		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/one.mp3");
 
 		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		System.out.println("                                    `    ``        ");
@@ -685,8 +695,8 @@ public class StageController {
 		System.out.println("                                    ` ####         ");
 		System.out.println("                                   `` ####` `      ");
 		System.out.println("                                           `       ");
-		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
-		timeSleep(1000);
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"+ "\n" + "\n");
+		timeSleep(1500);
 	}
 
 	public void timeSleep(int n) {

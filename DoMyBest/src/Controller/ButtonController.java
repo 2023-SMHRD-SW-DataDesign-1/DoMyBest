@@ -28,7 +28,7 @@ public class ButtonController {
 		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
 
 		long startTime = System.currentTimeMillis();
-		long endTime = startTime + TimeUnit.SECONDS.toMillis(20);
+		long endTime = startTime + TimeUnit.SECONDS.toMillis(30);
 		int count = 0;
 		while (System.currentTimeMillis() < endTime) {
 			count++;
@@ -159,14 +159,14 @@ public class ButtonController {
 						}
 					}
 					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/chap.mp3");
-//					mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/chap.mp3"); // 수환 개인컴퓨터용
+//					
 				} else {
 					break;
 				}
 				if (recipeList[j] == bt.answerGet()) {
 					System.out.println("          ʚ(*´꒳`*)ɞ ~♡ 정답! 다음 재료번호 입력해주세요!" + "");
-					System.out
-							.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"+ "\n" + "\n" + "\n" + "\n" + "\n"+ "\n" + "\n"+ "\n" + "\n" + "\n" + "\n" + "\n");
+					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 					if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
 						scon.easyLine(j); // 햄버거 쌓이는 시각효과 메서드
 					} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
@@ -176,6 +176,7 @@ public class ButtonController {
 					}
 
 				} else {
+					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/fail.mp3");
 					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 							+ "\n" + "\n" + "\n" + "\n" + "           햄버거 순서가 잘못됐어요. 손님이 집으로 돌아갔어요   ŏ̥̥̥̥םŏ̥̥̥̥  "
 							+ "\n" + "                      ∧＿∧" + "\n" + "                    ( ´ •̥̥̥ ω •̥̥̥ )  ❀"
@@ -197,10 +198,10 @@ public class ButtonController {
 						money += 20;
 					}
 					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/success.mp3");
-					System.out.println("\n"+"\n"+"\n"+"                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n" + "\n"
-							+ "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "\n"
+					System.out.println("\n" + "\n" + "\n" + "                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n"
+							+ "\n" + "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "\n"
 							+ "                               매출 : " + money + "$" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n" );
+							+ "\n" + "\n" + "\n");
 					timeSleep(2000);
 				}
 
