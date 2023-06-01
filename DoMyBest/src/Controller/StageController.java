@@ -41,7 +41,18 @@ public class StageController {
 			score = solveP();
 
 		}
+		mp3.stop();
 		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/clear.mp3");
+		
+		System.out.println("              토닥토닥");
+		System.out.println("             (\\__/)");
+		System.out.println("            （｀•.• )づ__/)");
+		System.out.println("            （つ　 /( •.• )");
+		System.out.println("              しーＪ (nnノ)");
+		System.out.println(" 오늘도 열심히 버거를 만드느라 고생했어요!");
+		System.out.println();
+		
+		timeSleep(3000);
 		
 		
 		

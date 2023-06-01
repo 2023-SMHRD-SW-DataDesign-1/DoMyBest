@@ -28,7 +28,7 @@ public class View {
 		while (true) {
 			System.out.println("            JAVA BURGER에 온 것을 환영합니다!    ");
 			System.out.println("             ₊    ˚   ✩    ｡˚      ˚ ☽");
-			System.out.println("             ˚  ₊        /) /)   ₊   ✩    ｡");
+			System.out.println("             ˚  ₊      /) /)   ₊   ✩    ｡");
 			System.out.println("             ˚    ✩  ( •̥ ˕ •̥)     ｡  ˚");
 			System.out.println("               ₊˚｡    c(“)(“)   ₊ ˚ ✩");
 			System.out.println("             ‘’’’’ꕤ’’’’’’’’’’’’’’ꕤ’’’’’’’’’");
@@ -49,7 +49,7 @@ public class View {
 			// 회원가입
 			if (num == 1) {
 				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
-				System.out.println(" ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀/)＿/)☆ ");
+				System.out.println(" ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ ⠀ ⠀/)＿/)☆ ");
 				System.out.println("⠀ ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀／(๑^᎑^๑)っ ＼");
 				System.out.println(" ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀／|￣∪￣ ￣ |＼／");
 				System.out.println("⠀ ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ |＿＿_＿＿|／");
@@ -76,7 +76,7 @@ public class View {
 			} else if (num == 2) {
 
 				while (true) {
-					System.out.println(".　　　　　　　　　　∧＿∧　 ");
+					System.out.println(".　　　　　　　　　 ∧＿∧　 ");
 					System.out.println("　　　　　　　　　（･ω･*  )  ");
 					System.out.println("　　　　　　　　　⊂(　　⊃");
 					System.out.println("　　　　　　　　　　⊂ーＪ...");
@@ -185,6 +185,12 @@ public class View {
 				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
 
 			} else if (num == 4) {
+				System.out.println("           ⌒__⌒");
+				System.out.println("        ( ˶ᵕ ﻌ ᵕ˶︎ ︎)");
+				System.out.println("         /　　⌒ヽ");
+				System.out.println("        人＿__つ_つ");
+				System.out.println();
+				System.out.println();
 				System.out.println("════════════════════ ೋღ 회원정보 삭제🌺 ღೋ ════════════════════");
 				System.out.println("(つ˵•́ω•̀˵)つ━☆ﾟ.*･｡ﾟ҉̛༽̨҉҉ﾉ 삭제 요정이 도와드리겠습니다 뿅(つ˵•́ω•̀˵)つ━☆ﾟ.*･｡ﾟ҉̛༽̨҉҉ﾉ");
 				System.out.println();
@@ -197,7 +203,13 @@ public class View {
 				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
 				
 			} else if (num == 5) {
-				System.out.println("프로그램을 종료합니다.");
+				System.out.println(" 　　 　　 　　∧ ∧");
+				System.out.println(" 　　 　　　 (´･ω･)");
+				System.out.println(" 　　 　　　 /　 ⌒ヽ");
+				System.out.println(" 　　 　　　(人＿＿つ_つ");
+				System.out.println(" 사장님, 버거는 나중에 만드시겠다구요?");
+				System.out.println();
+				System.out.println("        게임을 종료합니다.");
 				break;
 
 			} else {
