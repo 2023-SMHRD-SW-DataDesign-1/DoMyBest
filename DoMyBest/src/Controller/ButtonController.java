@@ -12,6 +12,7 @@ import Model.MemberDAO;
 import javazoom.jl.player.MP3Player;
 
 public class ButtonController {
+	int money = 0;
 	Random ran = new Random();
 	Scanner scan = new Scanner(System.in);
 	MemberDAO mdao = new MemberDAO();
@@ -44,7 +45,6 @@ public class ButtonController {
 			System.out.println("                   ♫ 띵 동 ♪  ");
 			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
 //			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
-			solveP();
 			score = solveP();
 
 		}
@@ -74,7 +74,7 @@ public class ButtonController {
 	}
 
 	public int solveP() { // 문제 푸는 메소드
-		int money = 0;
+		
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(12);
 		long endTime2 = startTime + TimeUnit.SECONDS.toMillis(10);

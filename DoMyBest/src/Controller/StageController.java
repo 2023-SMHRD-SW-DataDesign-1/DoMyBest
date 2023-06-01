@@ -10,7 +10,7 @@ import Model.MemberDAO;
 import javazoom.jl.player.MP3Player;
 
 public class StageController {
-
+	int money = 0;
 	Random ran = new Random();
 	Scanner scan = new Scanner(System.in);
 	CustomerDAO cdao = new CustomerDAO();
@@ -43,6 +43,8 @@ public class StageController {
 		}
 		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/clear.mp3");
 		
+		
+		
 		while (true) {
 			System.out.println(". ʕ⑅˶>⤙<˶ʔ");
 			System.out.println("ପ(  づ  づ )ଓ(최고!)");
@@ -67,7 +69,7 @@ public class StageController {
 	}
 
 	public int solveP() { // 문제 푸는 메소드
-		int money = 0;
+		
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(15);
 		long endTime2 = startTime + TimeUnit.SECONDS.toMillis(10);// 시간제한 5초

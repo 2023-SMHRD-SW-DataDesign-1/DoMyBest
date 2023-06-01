@@ -18,8 +18,9 @@ public class View {
 		ViewController vcon = new ViewController();
 		StageController keygame = new StageController();
 		ButtonController mousegame = new ButtonController();
-//		vcon.mainView();
-		System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+		vcon.mainView();
+		System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+				+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 		Scanner scan = new Scanner(System.in);
 		// Controller 의 메소드를 호출하기위해 Stagecontroller 객체 호출
 		StageController con = new StageController();
@@ -40,21 +41,23 @@ public class View {
 			System.out.println();
 			System.out.print("          원하시는 번호를 입력해주세요 >>>>>>  ");
 			int num = scan.nextInt();
-			System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
-			System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+			System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+					+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+			System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+					+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 			System.out.println();
 			// 회원가입
 			if (num == 1) {
-				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 				System.out.println(" ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀/)＿/)☆ ");
-			    System.out.println("⠀ ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀／(๑^᎑^๑)っ ＼");
-			    System.out.println(" ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀／|￣∪￣ ￣ |＼／");
-			    System.out.println("⠀ ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ |＿＿_＿＿|／");
-			    System.out.println();
-			    System.out.println("             JAVA BURGER에 오신 것을 환영해요!");
-			    System.out.println();
-			    System.out.println();
-			    System.out.println();
+				System.out.println("⠀ ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀／(๑^᎑^๑)っ ＼");
+				System.out.println(" ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀／|￣∪￣ ￣ |＼／");
+				System.out.println("⠀ ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ |＿＿_＿＿|／");
+				System.out.println();
+				System.out.println("             JAVA BURGER에 오신 것을 환영해요!");
+				System.out.println();
+				System.out.println();
+				System.out.println();
 				System.out.println("══════════════════════ ೋღ 회원가입🌺 ღೋ ══════════════════════");
 				System.out.print("원하는 ID를 입력하세요 >> ");
 				String id = scan.next();
@@ -62,12 +65,13 @@ public class View {
 				String pw = scan.next();
 				System.out.print("원하는 NAME를 입력하세요 >> ");
 				String name = scan.next();
-				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+						+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 
 				MemberDAO insertCon = new MemberDAO();
 
 				insertCon.insertMember(new MemberDTO(id, pw, name));
-             
+
 				// 로그인
 			} else if (num == 2) {
 
@@ -103,16 +107,16 @@ public class View {
 										mp3.stop();
 										System.out.println("게임을 시작합니다!");
 										keygame.timeSleep(1000);
-										System.out.println(
-												"\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"+ "\n" + "\n" + "\n" + "\n");
+										System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+												+ "\n" + "\n" + "\n" + "\n" + "\n");
 										System.out.println("        .............Behind Story............");
 										System.out.println("         햄버거가 너무 좋아서 세끼 햄버거만 먹던 나는..");
 										System.out.println("        열심히 돈을 모아서 JAVA HAMBURGER를 차렸다.");
 										System.out.println("           그리고 드디어 오늘은 가게를 오픈하는 날!");
 										System.out.println(" 나의 손맛이 들어간 맛있는 버거의 맛을 사람들이 알아주길 바라며...");
 										System.out.println("            설레는 마음으로 가게 운영을 시작해보자!");
-										System.out.println(
-												"\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"+ "\n" + "\n" + "\n" + "\n");
+										System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+												+ "\n" + "\n" + "\n" + "\n" + "\n");
 
 										keygame.timeSleep(3000);
 										keygame.countDown();
