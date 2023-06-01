@@ -25,12 +25,16 @@ public class View {
 		StageController con = new StageController();
 
 		while (true) {
-			System.out.println("₊    ˚   ✩    ｡˚      ˚ ☽");
-			System.out.println("˚  ₊        /) /)   ₊   ✩    ｡");
-			System.out.println("˚    ✩  ( •̥ ˕ •̥)     ｡  ˚");
-			System.out.println("  ₊˚｡    c(“)(“)   ₊ ˚ ✩");
-			System.out.println("‘’’’’ꕤ’’’’’’’’’’’’’’ꕤ’’’’’’’’’");
-			System.out.println(" ꕤ         ꕤ          ꕤ");	
+			System.out.println("            JAVA BURGER에 온 것을 환영합니다!    ");
+			System.out.println("             ₊    ˚   ✩    ｡˚      ˚ ☽");
+			System.out.println("             ˚  ₊        /) /)   ₊   ✩    ｡");
+			System.out.println("             ˚    ✩  ( •̥ ˕ •̥)     ｡  ˚");
+			System.out.println("               ₊˚｡    c(“)(“)   ₊ ˚ ✩");
+			System.out.println("             ‘’’’’ꕤ’’’’’’’’’’’’’’ꕤ’’’’’’’’’");
+			System.out.println("              ꕤ         ꕤ          ꕤ");
+			System.out.println();
+			System.out.println();
+			System.out.println();
 			System.out.println("═══════════ ೋღ JAVA HAMBURGER GAME 회원 시스템🌺 ღೋ ═══════════");
 			System.out.print("[1] 회원 가입 [2] 로그인 [3] 랭킹조회 [4] 회원 삭제 [5] 게임 종료  >>");
 			System.out.println();
@@ -41,19 +45,29 @@ public class View {
 			System.out.println();
 			// 회원가입
 			if (num == 1) {
+				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+				System.out.println(" ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀/)＿/)☆ ");
+			    System.out.println("⠀ ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀／(๑^᎑^๑)っ ＼");
+			    System.out.println(" ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ ⠀⠀⠀／|￣∪￣ ￣ |＼／");
+			    System.out.println("⠀ ⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀⠀ ⠀⠀⠀ |＿＿_＿＿|／");
+			    System.out.println();
+			    System.out.println("             JAVA BURGER에 오신 것을 환영해요!");
+			    System.out.println();
+			    System.out.println();
+			    System.out.println();
 				System.out.println("══════════════════════ ೋღ 회원가입🌺 ღೋ ══════════════════════");
-				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
 				System.out.print("원하는 ID를 입력하세요 >> ");
 				String id = scan.next();
 				System.out.print("원하는 PW를 입력하세요 >> ");
 				String pw = scan.next();
 				System.out.print("원하는 NAME를 입력하세요 >> ");
 				String name = scan.next();
+				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
 
 				MemberDAO insertCon = new MemberDAO();
 
 				insertCon.insertMember(new MemberDTO(id, pw, name));
-
+             
 				// 로그인
 			} else if (num == 2) {
 

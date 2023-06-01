@@ -49,9 +49,9 @@ public class MemberDAO {
 			row = psmt.executeUpdate();
 
 			if (row > 0) {
-				System.out.println("축하드립니다. 회원가입에 성공했습니다.");
+				System.out.println("         (๑^᎑^๑)っ 축하드립니다. 회원가입에 성공했습니다.");
 			} else {
-				System.out.println("죄송합니다. 회원가입에 실패했습니다.");
+				System.out.println("         :(;ﾞﾟωﾟ'): 죄송합니다. 회원가입에 실패했습니다.");
 			}
 
 		} catch (SQLException e) {
@@ -100,9 +100,10 @@ public class MemberDAO {
 			row = psmt.executeUpdate();
 			
 			if(row>0) {
-				System.out.println("랭킹 등록 완료");
+				System.out.println();
+				System.out.println("☆ヾ(ゝω・＊）찡긋- 랭킹 등록 완료");
 			}else {
-				System.out.println("랭킹 등록 실패");
+				System.out.println(" Σ( ﾟдﾟ)ﾟдﾟ) 어멋! 랭킹 등록 실패");
 			}
 			
 			
