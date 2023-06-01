@@ -23,7 +23,7 @@ public class ButtonController {
 	MP3Player mp3 = new MP3Player();
 
 	public void stageStart() { // 스테이지 시작메소드 ( 60초 )
-
+		int score = 0;
 		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bgm.mp3");
 //		mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bgm.mp3"); // 수환 개인컴퓨터용
 
@@ -45,12 +45,36 @@ public class ButtonController {
 			mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/bell.mp3");
 //			mp3.play("C:/Users/sh/git/DoMyBest/DoMyBest/Music/bell.mp3"); // 수환 개인컴퓨터용
 			solveP();
+			score = solveP();
 
+		}
+		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/clear.mp3");
+
+		while (true) {
+			System.out.println(". ʕ⑅˶>⤙<˶ʔ");
+			System.out.println("ପ(  づ  づ )ଓ(최고!)");
+			System.out.println();
+			System.out.println("╓═════ 랭킹을 등록하시겠어요?═════╖");
+			System.out.println("     [1] 등록   [2] 등록안함");
+			System.out.print("     번호를 입력해주세요 >>>");
+			int num = scan.nextInt();
+			if (num == 1) {
+				System.out.print(" ･ﾟ✧*:･ﾟ✧ 아이디를 입력해주세요 >> ");
+				String id = scan.next();
+				mdao.rankingInsert(id, score);
+				break;
+			} else if (num == 2) {
+				System.out.println("( ‘ o ‘ ) 등록을 하지 않습니다. 초기화면으로 돌아갑니다");
+				break;
+			} else {
+				System.out.println("(❛⌓❛ ) 잘못된 입력입니다. 다시 입력해주세요 ");
+			}
 		}
 
 	}
 
-	public void solveP() { // 문제 푸는 메소드
+	public int solveP() { // 문제 푸는 메소드
+		int money = 0;
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(12);
 		long endTime2 = startTime + TimeUnit.SECONDS.toMillis(10);
@@ -94,6 +118,15 @@ public class ButtonController {
 				System.out.println("--------------------------------------------------------------");
 				System.out.println("         재료 번호를 순서대로 클릭 해 주세요" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 						+ "\n" + "\n" + "\n");
+				if (System.currentTimeMillis() > endTime2) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
+					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "                  시간이 초과했어요. 손님이 집으로 돌아갔어요   ŏ̥̥̥̥םŏ̥̥̥̥  "
+							+ "\n" + "                      ∧＿∧" + "\n" + "                    ( ´ •̥̥̥ ω •̥̥̥ )  ❀"
+							+ "\n" + "                  ,, ( ヽ∩∩ ) ,, ヽ|〃 ,,," + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+					timeSleep(2000);
+					break;
+				}
 				Button bt = new Button();
 				if (remainingTime > 0) {
 					synchronized (bt) {
@@ -122,25 +155,31 @@ public class ButtonController {
 
 				} else {
 					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "        ŏ̥̥̥̥םŏ̥̥̥̥ 잘못된 재료번호입니다. 손님이 화가나서 돌아갔어요 ŏ̥̥̥̥םŏ̥̥̥̥ "
-							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n");
+							+ "\n" + "\n" + "\n" + "\n" + "           햄버거 순서가 잘못됐어요. 손님이 집으로 돌아갔어요   ŏ̥̥̥̥םŏ̥̥̥̥  "
+							+ "\n" + "                      ∧＿∧" + "\n" + "                    ( ´ •̥̥̥ ω •̥̥̥ )  ❀"
+							+ "\n" + "                  ,, ( ヽ∩∩ ) ,, ヽ|〃 ,,," + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 					System.out.println();
 					System.out.println();
-					timeSleep(2000);
-					break;
-				}
-				if (System.currentTimeMillis() > endTime2) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
-					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "시간이 초과했어요 ŏ̥̥̥̥םŏ̥̥̥̥  손님이 집으로 돌아갔어요ŏ̥̥̥̥םŏ̥̥̥̥  " + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n");
 					timeSleep(2000);
 					break;
 				}
 
 				if (j == (recipeList.length - 1)) {
-					System.out.println("성공!" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+
+					if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
+						money += 10;
+					} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
+						money += 15;
+					} else if (cdao.cList().get(temp).getDifficult().equals("HARD")) {
+						money += 20;
+					}
+					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/success.mp3");
+					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n"
+							+ "\n" + "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "현재금액 : " + money + "$" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n");
 					timeSleep(2000);
 				}
 
@@ -148,6 +187,7 @@ public class ButtonController {
 			break;
 
 		}
+		return money;
 
 	}
 

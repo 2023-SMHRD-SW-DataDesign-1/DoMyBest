@@ -41,7 +41,8 @@ public class StageController {
 			score = solveP();
 
 		}
-
+		mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/clear.mp3");
+		
 		while (true) {
 			System.out.println(". ʕ⑅˶>⤙<˶ʔ");
 			System.out.println("ପ(  づ  づ )ଓ(최고!)");
@@ -125,6 +126,7 @@ public class StageController {
 				System.out.print("    재료 번호를 순서대로 하나씩만 입력 후 엔터를 눌러주세요 >>");
 				answerList.add(scan.nextInt());
 				if (System.currentTimeMillis() > endTime2) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
+					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/fail.mp3");
 					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 							+ "\n" + "\n" + "\n" + "\n" + "                  시간이 초과했어요. 손님이 집으로 돌아갔어요   ŏ̥̥̥̥םŏ̥̥̥̥  "
 							+ "\n" + "                      ∧＿∧" + "\n" + "                    ( ´ •̥̥̥ ω •̥̥̥ )  ❀"
@@ -155,8 +157,8 @@ public class StageController {
 						} else if (cdao.cList().get(temp).getDifficult().equals("HARD")) {
 							money += 20;
 						}
-						System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-								+ "\n" + "\n" + "\n" + "\n" + "\n" + "                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! "
+						mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/success.mp3");
+						System.out.println("                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! "
 								+ "\n" + "\n" + "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "현재금액 : " + money
 								+ "$" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 								+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
@@ -164,6 +166,7 @@ public class StageController {
 						timeSleep(2000);
 					}
 				} else {
+					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/fail.mp3");
 					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 							+ "\n" + "\n" + "\n" + "\n" + "           햄버거 순서가 잘못됐어요. 손님이 집으로 돌아갔어요   ŏ̥̥̥̥םŏ̥̥̥̥  "
 							+ "\n" + "                      ∧＿∧" + "\n" + "                    ( ´ •̥̥̥ ω •̥̥̥ )  ❀"
