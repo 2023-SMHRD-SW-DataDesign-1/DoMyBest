@@ -76,6 +76,11 @@ public class View {
 			} else if (num == 2) {
 
 				while (true) {
+					System.out.println(".　　　　　　　　　　∧＿∧　 ");
+					System.out.println("　　　　　　　　　（･ω･*  )  ");
+					System.out.println("　　　　　　　　　⊂(　　⊃");
+					System.out.println("　　　　　　　　　　⊂ーＪ...");
+					System.out.println();
 					System.out.println("══════════════════ ೋღ 로그인🌺 ღೋ ══════════════════");
 					System.out.print("ID를 입력해주세요 >> ");
 					String id = scan.next();

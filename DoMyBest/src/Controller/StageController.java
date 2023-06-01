@@ -161,7 +161,8 @@ public class StageController {
 						}
 						mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/success.mp3");
 						System.out.println("                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! "
-								+ "\n" + "\n" + "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "현재금액 : " + money
+								+ "\n" + "\n" + "                        냠냠 너무 맛있을 것 같아요~" + "\n" + 
+								"\n" + "                               매출 : " + money
 								+ "$" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 								+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 

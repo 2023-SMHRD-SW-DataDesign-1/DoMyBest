@@ -152,9 +152,9 @@ public class MemberDAO {
 
 			int cnt = psmt.executeUpdate();
 			if (cnt > 0)
-				System.out.println("삭제 완료");
+				System.out.println(" (*･ω･)ω<*) 삭제가 완료됐습니다!");
 			else
-				System.out.println("삭제 실패");
+				System.out.println("（ｰωｰ*  )-= 존재하는 아이디가 없습니다.");
 		}
 		
 		catch (Exception e) {
