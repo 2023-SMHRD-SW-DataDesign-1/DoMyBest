@@ -68,7 +68,8 @@ public class StageController {
 	public int solveP() { // 문제 푸는 메소드
 		int money = 0;
 		long startTime = System.currentTimeMillis();
-		long endTime = startTime + TimeUnit.SECONDS.toMillis(10); // 시간제한 5초
+		long endTime = startTime + TimeUnit.SECONDS.toMillis(15);
+		long endTime2 = startTime + TimeUnit.SECONDS.toMillis(10);// 시간제한 5초
 		String questionList[] = { "빵", "양상추", "토마토", "마요네즈", "케첩", "불고기", "새우", "치킨", "치즈", "피클" };
 		ArrayList<Integer> answerList = new ArrayList<>();
 
@@ -123,6 +124,15 @@ public class StageController {
 				System.out.println();
 				System.out.print("    재료 번호를 순서대로 하나씩만 입력 후 엔터를 눌러주세요 >>");
 				answerList.add(scan.nextInt());
+				if (System.currentTimeMillis() > endTime2) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
+					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "                  시간이 초과했어요. 손님이 집으로 돌아갔어요   ŏ̥̥̥̥םŏ̥̥̥̥  "
+							+ "\n" + "                      ∧＿∧" + "\n" + "                    ( ´ •̥̥̥ ω •̥̥̥ )  ❀"
+							+ "\n" + "                  ,, ( ヽ∩∩ ) ,, ヽ|〃 ,,," + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+					timeSleep(2000);
+					break;
+				}
 				if ((char) (answerList.get(i) + '0') == recipeList[i]) {
 					System.out.println("          ʚ(*´꒳`*)ɞ ~♡ 정답! 다음 재료번호 입력해주세요!" + "");
 					System.out
@@ -147,8 +157,9 @@ public class StageController {
 						}
 						System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 								+ "\n" + "\n" + "\n" + "\n" + "\n" + "                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! "
-								+ "\n" + "\n" + "                        냠냠 너무 맛있을 것 같아요~"+"\n"+ "현재금액 : "+money + "$" +"\n" + "\n" + "\n" + "\n" + "\n"
-								+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+								+ "\n" + "\n" + "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "현재금액 : " + money
+								+ "$" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+								+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 
 						timeSleep(2000);
 					}
@@ -163,15 +174,7 @@ public class StageController {
 					timeSleep(2000);
 					break;
 				}
-				if (System.currentTimeMillis() > endTime) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
-					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "                  시간이 초과했어요. 손님이 집으로 돌아갔어요   ŏ̥̥̥̥םŏ̥̥̥̥  "
-							+ "\n" + "                      ∧＿∧" + "\n" + "                    ( ´ •̥̥̥ ω •̥̥̥ )  ❀"
-							+ "\n" + "                  ,, ( ヽ∩∩ ) ,, ヽ|〃 ,,," + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
-					timeSleep(2000);
-					break;
-				}
+
 			}
 			break;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////			
