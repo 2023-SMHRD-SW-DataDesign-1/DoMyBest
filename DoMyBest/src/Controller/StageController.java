@@ -151,7 +151,8 @@ public class StageController {
 					if (i == (recipeList.length - 1)) {
 					
 						System.out.println("\n"+"\n"+
-								"                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+								"                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n" + "\n" +
+								"                        냠냠 너무 맛있을 것 같아요~"+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 						if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
 							Score += 10;
 						} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
