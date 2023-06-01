@@ -44,9 +44,9 @@ public class StageController {
 
 		while (true) {
 			System.out.println(". ʕ⑅˶>⤙<˶ʔ");
-			System.out.println( "ପ(  づ  づ )ଓ(최고!)");
-	        System.out.println();
-	        System.out.println("╓═════ 랭킹을 등록하시겠어요?═════╖");
+			System.out.println("ପ(  づ  づ )ଓ(최고!)");
+			System.out.println();
+			System.out.println("╓═════ 랭킹을 등록하시겠어요?═════╖");
 			System.out.println("     [1] 등록   [2] 등록안함");
 			System.out.print("     번호를 입력해주세요 >>>");
 			int num = scan.nextInt();
@@ -149,7 +149,9 @@ public class StageController {
 						hardLine(i);
 					}
 					if (i == (recipeList.length - 1)) {
-						System.out.println("성공!" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+					
+						System.out.println("\n"+"\n"+
+								"                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 						if (cdao.cList().get(temp).getDifficult().equals("EASY")) {
 							Score += 10;
 						} else if (cdao.cList().get(temp).getDifficult().equals("NORMAL")) {
@@ -160,17 +162,13 @@ public class StageController {
 						timeSleep(2000);
 					}
 				} else {
-//					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-//							+ "\n" + "\n" + "\n" + "\n" +
-//                    System.out.println("._＿＿＿_             ");
-//                    System.out.println("／　　　　＼　");
-//                    System.out.println("／　  _ノ 　ヽ_ ＼");
-//                    System.out.println("／   　（●）（●）＼");
-//                    System.out.println("|　    ///（_人_）///    ＼.......잘못된 재료번호입니다. 손님이 화가나서 돌아갔어요 ŏ̥̥̥̥םŏ̥̥̥̥  ..");
-//                    System.out.println("＼   　　　 　　   ＼ ");
-//                    System.out.println("／　 　　　 　    　＼")
-//							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-//							+ "\n" + "\n" + "\n");
+					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "           햄버거 순서가 잘못됐어요. 손님이 집으로 돌아갔어요   ŏ̥̥̥̥םŏ̥̥̥̥  " + "\n"
+                            +"                      ∧＿∧" + "\n"
+							+"                    ( ´ •̥̥̥ ω •̥̥̥ )  ❀" + "\n"
+                            +"                  ,, ( ヽ∩∩ ) ,, ヽ|〃 ,,,"+"\n"
+							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n");
 					System.out.println();
 					System.out.println();
 					timeSleep(2000);
@@ -178,7 +176,10 @@ public class StageController {
 				}
 				if (System.currentTimeMillis() > endTime) { // 지정한 시간을 넘어서 답을 쓴경우 타임아웃
 					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "시간이 초과했어요 ŏ̥̥̥̥םŏ̥̥̥̥  손님이 집으로 돌아갔어요ŏ̥̥̥̥םŏ̥̥̥̥  " + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "                  시간이 초과했어요. 손님이 집으로 돌아갔어요   ŏ̥̥̥̥םŏ̥̥̥̥  " + "\n"
+                            +"                      ∧＿∧" + "\n"
+							+"                    ( ´ •̥̥̥ ω •̥̥̥ )  ❀" + "\n"
+                            +"                  ,, ( ヽ∩∩ ) ,, ヽ|〃 ,,,"+"\n"
 							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
 							+ "\n" + "\n");
 					timeSleep(2000);
