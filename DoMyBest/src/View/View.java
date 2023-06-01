@@ -66,7 +66,7 @@ public class View {
 				System.out.print("원하는 NAME를 입력하세요 >> ");
 				String name = scan.next();
 				System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-						+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
+						+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 
 				MemberDAO insertCon = new MemberDAO();
 
@@ -100,6 +100,7 @@ public class View {
 							System.out.println();
 							System.out.print("            번호를 입력해주세요  >>>>>  ");
 							num = scan.nextInt();
+							System.out.println("\n" + "\n" );
 							if (num == 1) {
 								while (true) {
 									System.out.println();
@@ -125,6 +126,7 @@ public class View {
 
 										keygame.timeSleep(3000);
 										keygame.countDown();
+										System.out.println("\n" + "\n" + "\n" + "\n");
 
 										keygame.stageStart();
 										System.out.println();
@@ -162,13 +164,15 @@ public class View {
 				}
 
 			} else if (num == 3) {
+				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
 				System.out.println("╭➳➳➳➳➳♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡⃘♡┈┈┈┈┈┈╮");
 				System.out.println("      이 구역의 랭킹탐정이 랭킹을 조회합니다.");
 				System.out.println("    랭킹탐정의 선글라스가 반짝이며 랭킹을 조회합니다.");
 				System.out.println("▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄");
 				System.out.println("█░░░░░░░░▀█▄▀▄▀██████░▀█▄▀▄▀██████░");
 				System.out.println("░░░░░░░░░░░▀█▄█▄███▀░░░ ▀██▄█▄███▀░");
-
+				System.out.println("\n"+"\n"+"\n");
+				
 				MemberDAO rankingCon = new MemberDAO();
 				for (int i = 0; i < rankingCon.rankingMember().size(); i++) {
 					System.out.print((i + 1) + "등 아이디는 ➳" + rankingCon.rankingMember().get(i).getId() + " ");
@@ -176,6 +180,9 @@ public class View {
 					System.out.print("점수는 ➳" + rankingCon.rankingMember().get(i).getScore() + " ");
 					System.out.println();
 				}
+				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+				keygame.timeSleep(4000);
+				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
 
 			} else if (num == 4) {
 				System.out.println("════════════════════ ೋღ 회원정보 삭제🌺 ღೋ ════════════════════");
@@ -183,12 +190,12 @@ public class View {
 				System.out.println();
 				System.out.print("삭제하고 싶은 아이디 입력 : ");
 				String id = scan.next();
-//	            
+
 				MemberDAO deleteCon = new MemberDAO();
 				deleteCon.memberDelete(id);
-
-//	            
-//	            System.out.println("회원 삭제에 "+result+"하셨습니다.");
+				keygame.timeSleep(2000);
+				System.out.println("\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n"+"\n");
+				
 			} else if (num == 5) {
 				System.out.println("프로그램을 종료합니다.");
 				break;

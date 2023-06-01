@@ -124,7 +124,7 @@ public class MemberDAO {
 		ArrayList<MemberDTO> Mlist = new ArrayList<>();
 
 		try {
-			String sql = "select id, name, score from member order by score desc";
+			String sql = "select id, name, score from member where score is not null order by score desc";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 

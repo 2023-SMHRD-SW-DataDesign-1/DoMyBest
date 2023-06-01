@@ -74,7 +74,7 @@ public class ButtonController {
 	}
 
 	public int solveP() { // 문제 푸는 메소드
-		
+
 		long startTime = System.currentTimeMillis();
 		long endTime = startTime + TimeUnit.SECONDS.toMillis(12);
 		long endTime2 = startTime + TimeUnit.SECONDS.toMillis(10);
@@ -175,11 +175,10 @@ public class ButtonController {
 						money += 20;
 					}
 					mp3.play("C:/Users/smhrd/git/DoMyBest/DoMyBest/Music/success.mp3");
-					System.out.println("\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n"
-							+ "\n" + "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "현재금액 : " + money + "$" + "\n"
-							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n"
-							+ "\n" + "\n" + "\n");
+					System.out.println("                 ＊ ( ・´з`・)／성공 ~ 맛있는 버거가 만들어졌어요! " + "\n" + "\n"
+							+ "                        냠냠 너무 맛있을 것 같아요~" + "\n" + "\n"
+							+ "                               매출 : " + money + "$" + "\n" + "\n" + "\n" + "\n" + "\n"
+							+ "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n" + "\n");
 					timeSleep(2000);
 				}
 
