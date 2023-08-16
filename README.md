@@ -17,4 +17,23 @@
 <br>
 <br>
 
+## 📰 DB 테이블 명세서
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/DoMyBest/assets/134522033/73812ced-1a48-4325-8f95-d6126f826547)
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/DoMyBest/assets/134522033/8c29bd87-f56a-42d8-a5ec-cb929c7ae47c)
 
+## 🖥️ 화면구성
+
+### 💛 게임 시작 인트로 화면
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/DoMyBest/assets/134522033/8b04415c-a54d-47cd-9688-65dc16c27d50)
+
+### 💛 햄버거 제작 화면
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/DoMyBest/assets/134522033/169e19fc-f71f-4dbb-b14a-2a1737de321e)
+
+### 💛 햄버거 만들기 성공 화면
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/DoMyBest/assets/134522033/d53d7959-17ad-454c-b1c7-f88b5efb1cea)
+
+### 💛 랭킹 조회 화면
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/DoMyBest/assets/134522033/71d5d6bb-cc8d-49c7-be7c-c040eb34652f)
+
+### 💛 마우스 버전 화면
+![image](https://github.com/2023-SMHRD-SW-DataDesign-1/DoMyBest/assets/134522033/69df56c4-565c-4acf-a372-29585626b9d7)
